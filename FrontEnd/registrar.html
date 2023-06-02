@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Cadastro.css">
+    <title>Registrar</title>
+</head>
+
+<body>
+    <div>
+        <h1>Cadastro</h1>
+        <form>
+            <label for="name">Nome: </label>
+            <input type="text" name="name" required>
+
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" required>
+
+            <label for="password">Senha: </label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="education">Escolaridade:</label>
+            <select id="education" name="education" required>
+                <option selected disabled>Escolha uma escolaridade</option>
+                <option value="Ensino Fundamental">Ensino Fundamental</option>
+                <option value="Ensino Médio">Ensino Médio</option>
+                <option value="Ensino Superior">Ensino Superior</option>
+            </select>
+
+            <label for="gender">Sexo:</label>
+            <div id="gender">
+                <select id="gender" name="genre" required>
+                    <option selected disabled>Escolha um gênero</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Não-binário">Não-binário</option>
+                </select>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+            <div class="signup-link"><span>Possui login?</span><a href="./login.html">Faça login</a></div>
+        </form>
+    </div>
+</body>
+
+<script src="js/registrar.js"></script>
+
+</html>
