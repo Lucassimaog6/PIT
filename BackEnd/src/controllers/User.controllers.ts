@@ -39,18 +39,19 @@ function createUser(req: Request, res: Response) {
 }
 
 // Atualiza um usuário
-function updateUser(req: Request, res: Response) {
-	User.updateOne({ id: req.params.id }, req.body)
-		.then((user) => {
-			if (user) {
-				res.status(200).json(user);
-			} else {
-				res.status(404).json({ message: 'User not found' });
-			}
-		})
-		.catch((err) => {
-			res.status(400).json(err);
-		});
+async function updateUser(req: Request, res: Response) {
+	try {
+		const userId = req.params.id;
+		const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true });
+
+		if (updatedUser) {
+			res.status(200).json(updatedUser);
+		} else {
+			res.status(404).json({ message: 'User not found' });
+		}
+	} catch (error) {
+		res.status(400).json({ message: 'Failed to update user', error });
+	}
 }
 
 // Deleta um usuário

@@ -15,31 +15,23 @@ const UserSchema = new Schema({
 		required: [true, 'Password is required'],
 		minlength: [6, 'Password must be at least 6 characters'],
 	},
-	age: {
-		type: Number,
+	born: {
+		type: Date,
 		required: [true, 'Age is required'],
 	},
-	avatarLink: String,
 	degree: {
 		type: String,
-		enum: {
-			values: ['Ensino Fundamental', 'Ensino Médio', 'Ensino Superior'],
-			message: 'Degree must be one of the following: Ensino Fundamental, Ensino Médio, Ensino Superior',
-		},
+		required: [true, 'Degree is required'],
 	},
 	genre: {
 		type: String,
-		enum: {
-			values: ['Feminino', 'Masculino', 'Não-binário'],
-			message: 'Genre must be one of the following: Feminino, Masculino, Não-binário',
-		},
+		required: [true, 'Genre is required'],
 	},
 	points: {
 		type: Number,
 		default: 10,
 		min: [0, 'Points must be at least 0'],
 	},
-	biography: String,
 });
 
 export const User = model('User', UserSchema);

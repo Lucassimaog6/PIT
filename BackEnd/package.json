@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "private": "true",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+    "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
