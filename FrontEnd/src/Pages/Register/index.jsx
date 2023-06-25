@@ -1,6 +1,9 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+	const navigate = useNavigate();
+
 	const name = useRef('');
 	const email = useRef('');
 	const password = useRef('');
@@ -28,17 +31,34 @@ export default function Register() {
 			genre: genre.current.value,
 		};
 
-		const response = await fetch('http://localhost:8000/register', {
+		const response = await fetch('https://pit.onrender.com/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data),
 		});
+
+		if (response.status !== 201) {
+			return alert('Invalid data');
+		}
+
+		alert('User created successfully');
+		handleLogin();
 	}
+
+	const handleLogin = () => {
+		navigate('/');
+	};
 
 	return (
 		<>
+			<button
+				onClick={handleLogin}
+				className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'
+			>
+				Login
+			</button>
 			<main className='mx-auto w-fit flex flex-col gap-2'>
 				<h1 className='text-center text-4xl'>Registrar</h1>
 				<label htmlFor='name'>
