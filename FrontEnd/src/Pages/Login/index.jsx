@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Login() {
 	const navigate = useNavigate();
@@ -62,6 +62,11 @@ export default function Login() {
 				>
 					Login
 				</button>
+				<div className='mx-auto p-2'>
+					<Link to='/register'>
+						<span className='underline'>Registre-se</span>
+					</Link>
+				</div>
 			</main>
 		</>
 	);

@@ -1,6 +1,9 @@
+import { useNavigate, Link } from 'react-router-dom';
 import { useRef } from 'react';
 
 export default function Register() {
+	const navigate = useNavigate();
+
 	const name = useRef('');
 	const email = useRef('');
 	const password = useRef('');
@@ -18,6 +21,7 @@ export default function Register() {
 		if (!degree.current.value) return alert('Degree is required');
 		if (!genre.current.value) return alert('Genre is required');
 		if (password.current.value !== passwordConfirmation.current.value) return alert('Passwords do not match');
+		if (password.current.value.length < 6) return alert('Password must be at least 6 characters long');
 
 		const data = {
 			name: name.current.value,
@@ -35,6 +39,15 @@ export default function Register() {
 			},
 			body: JSON.stringify(data),
 		});
+
+		if (!response.ok) {
+			const error = await response.json();
+			console.log(error);
+			return alert('Erro ao cadastrar usuário');
+		}
+
+		alert('Usuário cadastrado com sucesso');
+		navigate('/');
 	}
 
 	return (
@@ -127,6 +140,11 @@ export default function Register() {
 				>
 					Registrar
 				</button>
+				<div className='mx-auto p-2'>
+					<Link to='/'>
+						<span className='underline'>Faça Login</span>
+					</Link>
+				</div>
 			</main>
 		</>
 	);
