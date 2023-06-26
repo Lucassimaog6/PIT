@@ -1,10 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
-	const navigate = useNavigate();
-
 	const navigate = useNavigate();
 
 	const name = useRef('');
@@ -53,18 +50,8 @@ export default function Register() {
 		navigate('/');
 	}
 
-	const handleLogin = () => {
-		navigate('/');
-	};
-
 	return (
 		<>
-			<button
-				onClick={handleLogin}
-				className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'
-			>
-				Login
-			</button>
 			<main className='mx-auto w-fit flex flex-col gap-2'>
 				<h1 className='text-center text-4xl'>Registrar</h1>
 				<label htmlFor='name'>
@@ -146,7 +133,6 @@ export default function Register() {
 						<option value='3'>Não binário</option>
 					</select>
 				</label>
-
 				<button
 					onClick={handleSubmit}
 					className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'

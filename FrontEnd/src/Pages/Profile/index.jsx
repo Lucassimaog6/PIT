@@ -40,17 +40,13 @@ export default function Profile() {
 			degree,
 			genre,
 		};
-		const response = await fetch(`https://pit.onrender.com/users/${user.id}`, {
+		const response = await fetch(`https://pit.onrender.com/users/${user}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data),
 		});
-
-		if (response.status === 404) {
-			return alert('Usuário não encontrado!');
-		}
 
 		if (response.status === 400) {
 			return alert('Erro ao atualizar perfil!');
@@ -59,6 +55,21 @@ export default function Profile() {
 		if (response.status === 200) {
 			alert('Perfil atualizado com sucesso!');
 			navigate('/home');
+		}
+	};
+
+	const handleDelete = async () => {
+		const response = await fetch(`https://pit.onrender.com/users/${user}`, {
+			method: 'DELETE',
+		});
+
+		if (response.status === 400) {
+			return alert('Erro ao deletar perfil!');
+		}
+
+		if (response.status === 200) {
+			alert('Perfil deletado com sucesso!');
+			navigate('/');
 		}
 	};
 
@@ -147,6 +158,13 @@ export default function Profile() {
 					className='bg-black/40 mx-auto w-fit px-4 py-2 rounded'
 				>
 					Atualizar
+				</button>
+
+				<button
+					onClick={handleDelete}
+					className='bg-red-300 mx-auto w-fit px-4 py-2 rounded'
+				>
+					Deletar conta
 				</button>
 			</main>
 		</>

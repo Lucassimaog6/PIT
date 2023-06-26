@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 export default function Login() {
@@ -32,18 +32,33 @@ export default function Login() {
 		navigate('/home');
 	}
 
-	function handleRegister() {
-		navigate('/register');
-	}
+	useEffect(() => {
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const codeParam = urlParams.get('code');
+		console.log(codeParam);
+
+		if (codeParam) {
+			(async () => {
+				const response = await fetch(`http://localhost:8000/login/github_token?code=${codeParam}`, {
+					method: 'GET',
+				});
+				const data = await response.json();
+				console.log(data);
+				if (data.access_token) {
+					alert('Login com Github realizado com sucesso!');
+					console.log(data.access_token);
+				}
+			})();
+		}
+	}, []);
+
+	const handleGithubLogin = async () => {
+		window.location.href = `https://github.com/login/oauth/authorize?client_id=${import.meta.env.VITE_CLIENT_ID}`;
+	};
 
 	return (
 		<>
-			<button
-				onClick={handleRegister}
-				className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'
-			>
-				Register
-			</button>
 			<main className='mx-auto w-fit flex flex-col gap-2'>
 				<h1 className='text-center text-4xl'>Login</h1>
 				<label htmlFor='email'>
@@ -77,6 +92,12 @@ export default function Login() {
 						<span className='underline'>Registre-se</span>
 					</Link>
 				</div>
+				<button
+					className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'
+					onClick={handleGithubLogin}
+				>
+					Login com Github
+				</button>
 			</main>
 		</>
 	);
