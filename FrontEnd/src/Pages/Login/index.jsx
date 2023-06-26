@@ -13,7 +13,7 @@ export default function Login() {
 		if (!email.current.value) return alert('Email is required');
 		if (!password.current.value) return alert('Password is required');
 
-		const response = await fetch('http://localhost:8000/login', {
+		const response = await fetch('https://pit.onrender.com/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -32,8 +32,18 @@ export default function Login() {
 		navigate('/home');
 	}
 
+	function handleRegister() {
+		navigate('/register');
+	}
+
 	return (
 		<>
+			<button
+				onClick={handleRegister}
+				className='bg-black/40 w-fit mx-auto px-4 py-2 rounded'
+			>
+				Register
+			</button>
 			<main className='mx-auto w-fit flex flex-col gap-2'>
 				<h1 className='text-center text-4xl'>Login</h1>
 				<label htmlFor='email'>

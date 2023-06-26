@@ -15,7 +15,7 @@ export default function Profile() {
 
 	useState(() => {
 		(async () => {
-			const response = await fetch(`http://localhost:8000/users/${user}`);
+			const response = await fetch(`https://pit.onrender.com/users/${user}`);
 			const _user = await response.json();
 
 			setName(_user.name);
@@ -40,7 +40,7 @@ export default function Profile() {
 			degree,
 			genre,
 		};
-		const response = await fetch(`http://localhost:8000/users/${user.id}`, {
+		const response = await fetch(`https://pit.onrender.com/users/${user.id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',

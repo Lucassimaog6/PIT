@@ -13,7 +13,7 @@ export default function Home() {
 		}
 
 		(async () => {
-			const response = await fetch(`http://localhost:8000/users/${user}`);
+			const response = await fetch(`https://pit.onrender.com/users/${user}`);
 
 			if (response.status === 404) return alert('Usuário não encontrado!');
 
