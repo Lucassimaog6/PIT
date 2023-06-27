@@ -5,6 +5,7 @@ import Login from './Pages/Login/index';
 import Register from './Pages/Register/index';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
+import Project from './Pages/Project';
 
 import './index.css';
 
@@ -32,6 +33,10 @@ function App() {
 			<Route
 				path='/profile'
 				element={<Profile />}
+			/>
+			<Route
+				path='/project/new'
+				element={<Project />}
 			/>
 		</Routes>
 	);

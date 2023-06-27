@@ -3,21 +3,20 @@ import { Project } from '../models/Projects.models';
 import { User } from '../models/User.models';
 
 // Cria um projeto
-function createProject(req: Request, res: Response) {
-	Project.create(
-		{
+async function createProject(req: Request, res: Response) {
+	try {
+		const project = await Project.create({
+			createdAt: new Date(),
+			updatedAt: new Date(),
 			upvotes: 0,
 			downvotes: 0,
 			completed: 0,
-		},
-		req.body
-	)
-		.then((project) => {
-			res.status(201).json(project);
-		})
-		.catch((err) => {
-			res.status(400).json(err);
+			...req.body,
 		});
+		res.status(201).json(project);
+	} catch (err) {
+		res.status(400).json(err);
+	}
 }
 
 // Busca um projeto pelo id

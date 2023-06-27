@@ -11,10 +11,7 @@ const ProjectSchema = new Schema({
 	},
 	dificulty: {
 		type: String,
-		enum: {
-			values: ['Fácil', 'Médio', 'Difícil'],
-			message: 'Dificulty must be one of the following: Fácil, Médio, Difícil',
-		},
+		required: [true, 'Dificulty is required'],
 	},
 	tags: [String],
 	owner: {

@@ -32,6 +32,10 @@ export default function Home() {
 		navigate('/profile');
 	};
 
+	const handleNewProject = () => {
+		navigate('/project/new');
+	};
+
 	return (
 		<>
 			<header className='flex justify-between p-4'>
@@ -39,6 +43,12 @@ export default function Home() {
 					Bem vindo: <span>{userName}</span>
 				</p>
 				<div className='flex gap-4'>
+					<button
+						onClick={handleNewProject}
+						className='bg-black/40 w-fit px-4 py-2 rounded'
+					>
+						Novo Projeto
+					</button>
 					<button
 						onClick={handleLogout}
 						className='bg-black/40 w-fit px-4 py-2 rounded'
