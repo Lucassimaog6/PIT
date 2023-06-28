@@ -31,15 +31,13 @@ function getProject(req: Request, res: Response) {
 }
 
 // Busca todos os projetos e ordena por data de atualização
-function getProjectsByDate(req: Request, res: Response) {
-	Project.find({})
-		.sort({ updatedAt: 'desc' })
-		.then((project) => {
-			res.status(200).json(project);
-		})
-		.catch((err) => {
-			res.status(400).json(err);
-		});
+async function getProjectsByDate(req: Request, res: Response) {
+	try {
+		const project = await Project.find({}).sort({ updatedAt: 'desc' });
+		res.status(200).json(project);
+	} catch (err) {
+		res.status(400).json(err);
+	}
 }
 
 // Busca todos os projetos e ordena por upvotes

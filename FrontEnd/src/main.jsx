@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Login from './Pages/Login/index';
 import Register from './Pages/Register/index';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
 import Project from './Pages/Project';
+import Filter from './Pages/Filter';
 
 import './index.css';
 
@@ -37,6 +39,10 @@ function App() {
 			<Route
 				path='/project/new'
 				element={<Project />}
+			/>
+			<Route
+				path='/project/filter'
+				element={<Filter />}
 			/>
 		</Routes>
 	);
