@@ -9,7 +9,6 @@ import Profile from './Pages/Profile';
 import Project from './Pages/Project';
 import Filter from './Pages/Filter';
 
-import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
