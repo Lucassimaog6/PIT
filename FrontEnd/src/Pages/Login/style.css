@@ -1,0 +1,13 @@
+main{
+    background-color: #F0A202;
+    width: 500px;
+}
+
+main label{
+    display: flex;
+    flex-direction: column;
+}
+
+main label input{
+    width: 200px;
+}
