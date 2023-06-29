@@ -6,8 +6,5 @@ main{
 main label{
     display: flex;
     flex-direction: column;
-}
-
-main label input{
     width: 200px;
 }
