@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Card from '../../components/Card';
 
 export default function Home() {
 	const [projects, setProjects] = useState([]);
@@ -83,16 +84,10 @@ export default function Home() {
 				<div className='grid grid-cols-3 gap-4 p-4'>
 					<h1 className='text-4xl text-center col-span-3'>Adicionados recentemente:</h1>
 					{projects.map((p) => (
-						<div
-							key={p._id}
-							className='bg-black/40 rounded p-4'
-						>
-							<h1 className='text-2xl'>{p.title}</h1>
-							<p>{p.description}</p>
-							<p>
-								Dificuldade: <span>{p.dificulty}</span>
-							</p>
-						</div>
+						<Card title={p.title}
+							description={p.description}
+							dificulty={p.dificulty}
+						/>
 					))}
 				</div>
 			) : (

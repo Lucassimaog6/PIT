@@ -98,6 +98,7 @@ export default function Login() {
 				>
 					Login com Github
 				</button>
+				
 			</main>
 		</>
 	);
