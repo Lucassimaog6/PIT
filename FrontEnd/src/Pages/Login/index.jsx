@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Imagem from "./imagens/macaco.png";
-import "./login.css";
+// import "./login.css.off";
 
 export default function Login() {
   const navigate = useNavigate();
