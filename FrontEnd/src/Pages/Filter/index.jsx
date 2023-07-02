@@ -6,7 +6,7 @@ export default function Filter() {
 
 	useEffect(() => {
 		(async () => {
-			const response = await fetch('http://localhost:8000/projects/date');
+			const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/date`);
 			setProjects(await response.json());
 		})();
 	}, []);
