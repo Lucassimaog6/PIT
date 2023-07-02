@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Auth0Provider } from "@auth0/auth0-react";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Auth0Provider} from "@auth0/auth0-react";
 
 import './index.css'
 
@@ -15,55 +15,54 @@ import Landing from "./Pages/Landing";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<Auth0Provider
-		domain='dev-1ey1lh2q2hux3w6g.us.auth0.com'
-		clientId='cZO85TBx2RFzIjgUcK5vTsJ434NO7mI5'
-		authorizationParams={{
-			redirect_uri: window.location.origin
-		}}
-	>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Auth0Provider>
-
+    <Auth0Provider
+        domain='dev-1ey1lh2q2hux3w6g.us.auth0.com'
+        clientId='cZO85TBx2RFzIjgUcK5vTsJ434NO7mI5'
+        authorizationParams={{
+            redirect_uri: import.meta.env.VITE_API_URL,
+        }}
+    >
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Auth0Provider>
 );
 
 function App() {
-	return (
-		<Routes>
-			<Route
-				path='/'
-				element={<Landing/>}
-			/>
-			<Route
-				path='/auth'
-				element={<Auth0/>}
-			/>
-			<Route
-				path='/register'
-				element={<Register />}
-			/>
-			<Route
-				path='/login'
-				element={<Login />}
-			/>
-			<Route
-				path='/home'
-				element={<Home />}
-			/>
-			<Route
-				path='/profile'
-				element={<Profile />}
-			/>
-			<Route
-				path='/project/new'
-				element={<Project />}
-			/>
-			<Route
-				path='/project/filter'
-				element={<Filter />}
-			/>
-		</Routes>
-	);
+    return (
+        <Routes>
+            <Route
+                path='/'
+                element={<Landing/>}
+            />
+            <Route
+                path='/auth'
+                element={<Auth0/>}
+            />
+            <Route
+                path='/register'
+                element={<Register/>}
+            />
+            <Route
+                path='/login'
+                element={<Login/>}
+            />
+            <Route
+                path='/home'
+                element={<Home/>}
+            />
+            <Route
+                path='/profile'
+                element={<Profile/>}
+            />
+            <Route
+                path='/project/new'
+                element={<Project/>}
+            />
+            <Route
+                path='/project/filter'
+                element={<Filter/>}
+            />
+        </Routes>
+    );
 }
