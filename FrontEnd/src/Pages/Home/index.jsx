@@ -1,37 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function Home() {
+	const navigate = useNavigate()
+	const {isAuthenticated, user, logout, isLoading} = useAuth0()
+	if (!isAuthenticated && !isLoading) navigate('/')
+
 	const [projects, setProjects] = useState([]);
 	const [userName, setUserName] = useState('');
-	const navigate = useNavigate();
 
 	useEffect(() => {
-		let user = JSON.parse(localStorage.getItem('user'));
-
-		if (!user) {
-			navigate('/');
-		}
-
-		(async () => {
-			const response = await fetch(`https://pit.onrender.com/users/${user}`);
-			if (response.status === 404) return navigate('/');
-			const _user = await response.json();
-			setUserName(_user.name);
-		})();
+		if (user) setUserName(user.name);
 
 		(async () => {
 			const response = await fetch('https://pit.onrender.com/projects/date');
 			const _projects = await response.json();
-			console.log(_projects);
 			setProjects(_projects);
 		})();
-	}, []);
 
-	const handleLogout = () => {
-		localStorage.removeItem('user');
-		navigate('/');
-	};
+	}, [user]);
 
 	const handleProfile = () => {
 		navigate('/profile');
@@ -46,7 +34,7 @@ export default function Home() {
 	};
 
 	return (
-		<>
+		<main className='bg-zinc-900 min-h-screen'>
 			<header className='flex justify-between p-4'>
 				<p>
 					Bem vindo: <span>{userName}</span>
@@ -65,7 +53,7 @@ export default function Home() {
 						Novo Projeto
 					</button>
 					<button
-						onClick={handleLogout}
+						onClick={() => logout()}
 						className='bg-black/40 w-fit px-4 py-2 rounded'
 					>
 						Logout
@@ -100,6 +88,6 @@ export default function Home() {
 					<p>Nenhum projeto encontrado</p>
 				</div>
 			)}
-		</>
+		</main>
 	);
 }

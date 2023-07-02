@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Auth0Provider } from "@auth0/auth0-react";
 
+import './index.css'
+
 import Login from './Pages/Login/index';
 import Register from './Pages/Register/index';
 import Home from './Pages/Home';
@@ -9,6 +11,7 @@ import Profile from './Pages/Profile';
 import Project from './Pages/Project';
 import Filter from './Pages/Filter';
 import Auth0 from "./Pages/Auth0.jsx";
+import Landing from "./Pages/Landing";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,6 +34,10 @@ function App() {
 		<Routes>
 			<Route
 				path='/'
+				element={<Landing/>}
+			/>
+			<Route
+				path='/auth'
 				element={<Auth0/>}
 			/>
 			<Route

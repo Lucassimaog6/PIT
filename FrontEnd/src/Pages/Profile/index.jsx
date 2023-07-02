@@ -11,11 +11,11 @@ export default function Profile() {
 	const [degree, setDegree] = useState('');
 	const [genre, setGenre] = useState('');
 
-	let user = JSON.parse(localStorage.getItem('user'));
+	let user = localStorage.getItem('id');
 
 	useState(() => {
 		(async () => {
-			const response = await fetch(`https://pit.onrender.com/users/${user}`);
+			const response = await fetch(`http://localhost:8000/users/${user}`);
 			const _user = await response.json();
 
 			setName(_user.name);

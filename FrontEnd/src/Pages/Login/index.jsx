@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Imagem from "./imagens/macaco.png";
+import Imagem from "../../Assets/macaco.png";
 // import "./login.css.off";
 
 export default function Login() {
@@ -31,6 +31,8 @@ export default function Login() {
     }
 
     const data = await response.json();
+
+    console.log(data);
 
     localStorage.setItem("user", JSON.stringify(data[0]._id));
 
