@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         domain='dev-1ey1lh2q2hux3w6g.us.auth0.com'
         clientId='cZO85TBx2RFzIjgUcK5vTsJ434NO7mI5'
         authorizationParams={{
-            redirect_uri: import.meta.env.VITE_API_URL,
+            redirect_uri: import.meta.env.VITE_REDIRECT_URI,
         }}
     >
         <BrowserRouter>
