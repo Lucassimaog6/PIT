@@ -25,7 +25,7 @@ export default function Home() {
 			<HeaderHome/>
 			<h1 className='text-4xl text-center col-span-3'>Adicionados recentemente:</h1>
 			{projects.length > 0 ? (
-				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4'>
+				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 px-28'>
 					{projects.map((p) => (
 						<CardProject key={p._id} project={p} />
 					))}
