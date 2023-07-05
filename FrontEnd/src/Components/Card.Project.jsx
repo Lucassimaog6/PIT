@@ -1,5 +1,5 @@
 export default function CardProject(params) {
-import imagempro from '../../Assets/projeto.jpg' 
+import imagempro from '../Assets/projeto.jpg' 
     const project = params.project;
     const ProjectDificulty = project.dificulty;
 
