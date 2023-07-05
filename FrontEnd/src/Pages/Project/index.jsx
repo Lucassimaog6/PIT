@@ -85,7 +85,7 @@ export default function Project() {
 						</button>
 						<button type="button"
 								onClick={() => setDificulty("3")}
-								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-ld bg-yellow-600`}>
+								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-lg bg-yellow-600`}>
 							Difícil
 						</button>
 					</div>
