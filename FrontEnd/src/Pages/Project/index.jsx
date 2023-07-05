@@ -43,7 +43,7 @@ export default function Project() {
 	return (
 		<div className='min-h-screen flex items-center justify-center'>
 
-			<button className='absolute top-2 left-2 bg-amber-400 py-1 px-2 rounded'
+			<button className='absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded'
 					onClick={() => navigate('/home')}>Voltar
 			</button>
 
