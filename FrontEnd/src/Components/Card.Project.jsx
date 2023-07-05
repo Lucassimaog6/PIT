@@ -23,7 +23,7 @@ export default function CardProject(params) {
     }
 
     return (
-        <section className='bg-zinc-800 p-4 rounded-xl flex flex-col gap-2 bg-orange-400'>
+        <section className='bg-zinc-800 p-4 rounded-xl flex flex-col gap-2 bg-amber-500 h-32'>
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
                 <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
