@@ -47,7 +47,7 @@ export default function Project() {
 					onClick={() => navigate('/home')}>Voltar
 			</button>
 
-			<main className='flex flex-col gap-2 bg-yellow-600'>
+			<main className='flex flex-col gap-2'>
 
 				<h1 className='text-center text-6xl'>Novo Projeto</h1>
 				<label htmlFor='title'>
