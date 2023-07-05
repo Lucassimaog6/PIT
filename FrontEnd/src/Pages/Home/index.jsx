@@ -1,93 +1,33 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Card from '../../components/Card';
+import {useAuth0} from "@auth0/auth0-react";
+import CardProject from "../../Components/Card.Project.jsx";
+import HeaderHome from "../../Components/Header.Home.jsx";
 
 export default function Home() {
+	const navigate = useNavigate()
+	const {isAuthenticated, isLoading} = useAuth0()
+	if (!isAuthenticated && !isLoading) navigate('/')
+
 	const [projects, setProjects] = useState([]);
-	const [userName, setUserName] = useState('');
-	const navigate = useNavigate();
 
 	useEffect(() => {
-		let user = JSON.parse(localStorage.getItem('user'));
-
-		if (!user) {
-			navigate('/');
-		}
-
 		(async () => {
-			const response = await fetch(`https://pit.onrender.com/users/${user}`);
-			if (response.status === 404) return navigate('/');
-			const _user = await response.json();
-			setUserName(_user.name);
-		})();
-
-		(async () => {
-			const response = await fetch('https://pit.onrender.com/projects/date');
-			const _projects = await response.json();
-			console.log(_projects);
-			setProjects(_projects);
+			const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/date`);
+			if (!response.ok) return alert('Erro ao buscar projetos');
+			const data = await response.json();
+			setProjects(data);
 		})();
 	}, []);
 
-	const handleLogout = () => {
-		localStorage.removeItem('user');
-		navigate('/');
-	};
-
-	const handleProfile = () => {
-		navigate('/profile');
-	};
-
-	const handleNewProject = () => {
-		navigate('/project/new');
-	};
-
-	const handleFilter = () => {
-		navigate('/project/filter');
-	};
-
 	return (
-		<>
-			<header className='flex justify-between p-4'>
-				<p>
-					Bem vindo: <span>{userName}</span>
-				</p>
-				<div className='flex gap-4'>
-					<button
-						onClick={handleFilter}
-						className='bg-black/40 w-fit px-4 py-2 rounded'
-					>
-						Filtros
-					</button>
-					<button
-						onClick={handleNewProject}
-						className='bg-black/40 w-fit px-4 py-2 rounded'
-					>
-						Novo Projeto
-					</button>
-					<button
-						onClick={handleLogout}
-						className='bg-black/40 w-fit px-4 py-2 rounded'
-					>
-						Logout
-					</button>
-					<button
-						onClick={handleProfile}
-						className='bg-black/40 w-fit px-4 py-2 rounded'
-					>
-						Perfil
-					</button>
-				</div>
-			</header>
-
+		<main className='bg-zinc-900 min-h-screen'>
+			<HeaderHome/>
+			<h1 className='text-4xl text-center col-span-3 p-8'>Adicionados recentemente:</h1>
 			{projects.length > 0 ? (
-				<div className='grid grid-cols-3 gap-4 p-4'>
-					<h1 className='text-4xl text-center col-span-3'>Adicionados recentemente:</h1>
+				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 xl:px-28 px-8'>
 					{projects.map((p) => (
-						<Card title={p.title}
-							description={p.description}
-							dificulty={p.dificulty}
-						/>
+						<CardProject key={p._id} project={p} />
 					))}
 				</div>
 			) : (
@@ -95,6 +35,6 @@ export default function Home() {
 					<p>Nenhum projeto encontrado</p>
 				</div>
 			)}
-		</>
+		</main>
 	);
 }

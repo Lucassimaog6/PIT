@@ -1,24 +1,28 @@
-import { useRef } from 'react';
+import {useRef, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Project() {
 	const navigate = useNavigate();
 
 	const title = useRef('');
-	const dificulty = useRef('');
+	const [dificulty, setDificulty] = useState('');
 	const description = useRef('');
 	const linkImage = useRef('');
 
 	const handleNewProject = async () => {
+		if (dificulty === '') return alert('Selecione uma dificuldade!');
+		if (title.current.value === '') return alert('Digite um título!');
+		if (description.current.value === '') return alert('Digite uma descrição!');
+
 		const data = {
 			title: title.current.value,
-			dificulty: dificulty.current.value,
+			dificulty: dificulty,
 			description: description.current.value,
 			linkImage: linkImage.current.value,
-			owner: JSON.parse(localStorage.getItem('user')),
+			owner: localStorage.getItem('id'),
 		};
 
-		const response = await fetch('http://localhost:8000/projects', {
+		const response = await fetch(`${import.meta.env.VITE_API_URL}/projects`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -37,63 +41,89 @@ export default function Project() {
 	};
 
 	return (
-		<main className='mx-auto w-fit flex flex-col gap-2'>
-			<h1 className='text-center text-4xl'>Novo Projeto</h1>
-			<label htmlFor='title'>
-				Nome do projeto:
-				<input
-					className='w-full p-2 bg-black/20 rounded'
-					type='text'
-					id='title'
-					ref={title}
-				/>
-			</label>
+		<div className='min-h-screen flex items-center justify-center'>
 
-			<label htmlFor='dificulty'>
-				Dificuldade:
-				<select
-					className='w-full p-2 bg-black/20 rounded'
-					name='dificulty'
-					id='dificulty'
-					ref={dificulty}
-				>
-					<option value='1'>Fácil</option>
-					<option value='2'>Médio</option>
-					<option value='3'>Difícil</option>
-				</select>
-			</label>
-
-			<label
-				className='flex flex-col'
-				htmlFor='description'
-			>
-				Descrição:
-				<textarea
-					className='p-2 bg-black/20 rounded '
-					name='description'
-					id='description'
-					cols='30'
-					rows='5'
-					ref={description}
-				></textarea>
-			</label>
-
-			<label htmlFor='linkImage'>
-				Link da imagem:
-				<input
-					className='w-full p-2 bg-black/20 rounded'
-					type='text'
-					id='linkImage'
-					ref={linkImage}
-				/>
-			</label>
-
-			<button
-				className='w-full p-2 bg-black/40 rounded'
-				onClick={handleNewProject}
-			>
-				Enviar
+			<button className='absolute top-2 left-2 bg-amber-400 py-1 px-2 rounded'
+					onClick={() => navigate('/home')}>Voltar
 			</button>
-		</main>
+
+			<main className='flex flex-col gap-2'>
+
+				<h1 className='text-center text-6xl'>Novo Projeto</h1>
+				<label htmlFor='title'>
+					Nome do projeto:
+					<input
+						className='w-full p-2 bg-black/20 rounded'
+						type='text'
+						id='title'
+						ref={title}
+					/>
+				</label>
+
+				<label htmlFor='dificulty' className='flex flex-col'>
+					Dificuldade:
+					{/*<select*/}
+					{/*	className='w-full p-2 bg-black/20 rounded'*/}
+					{/*	name='dificulty'*/}
+					{/*	id='dificulty'*/}
+					{/*	ref={dificulty}*/}
+					{/*>*/}
+					{/*	<option value='1'>Fácil</option>*/}
+					{/*	<option value='2'>Médio</option>*/}
+					{/*	<option value='3'>Difícil</option>*/}
+					{/*</select>*/}
+					<div className="inline-flex rounded-md shadow-sm">
+						<button type="button"
+								onClick={() => setDificulty("1")}
+								className={`${dificulty === "1" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg`}>
+							Fácil
+						</button>
+						<button type="button"
+								onClick={() => setDificulty("2")}
+								className={`${dificulty === "2" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200`}>
+							Médio
+						</button>
+						<button type="button"
+								onClick={() => setDificulty("3")}
+								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md`}>
+							Difícil
+						</button>
+					</div>
+				</label>
+
+				<label
+					className='flex flex-col'
+					htmlFor='description'
+				>
+					Descrição:
+					<textarea
+						className='p-2 bg-black/20 rounded '
+						name='description'
+						id='description'
+						cols='30'
+						rows='5'
+						ref={description}
+					></textarea>
+				</label>
+
+				<label htmlFor='linkImage'>
+					Link da imagem:
+					<input
+						className='w-full p-2 bg-black/20 rounded'
+						type='text'
+						id='linkImage'
+						ref={linkImage}
+					/>
+				</label>
+
+				<button
+					className='w-full p-2 bg-black/40 rounded'
+					onClick={handleNewProject}
+				>
+					Enviar
+				</button>
+
+			</main>
+		</div>
 	);
 }
