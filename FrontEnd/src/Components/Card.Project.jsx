@@ -25,7 +25,7 @@ export default function CardProject(params) {
     }
 
     return (
-        <section className='bg-amber-500 p-4 rounded-xl flex flex-col gap-2 h-96'>
+        <section className='bg-amber-500 p-4 rounded-xl flex flex-col gap-2 h-full'>
          <img class="h-48" src={imagempro} alt="Imagem Projeto"/>
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
