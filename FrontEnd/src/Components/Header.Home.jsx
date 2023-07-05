@@ -20,25 +20,25 @@ export default function HeaderHome() {
             <div className='justify-self-center md:justify-self-end flex gap-4'>
                 <button
                     onClick={() => navigate('/project/filter')}
-                    className='bg-black/40 w-fit px-4 py-2 rounded'
+                    className='bg-purple-600 w-fit px-4 py-2 rounded'
                 >
                     Filtros
                 </button>
                 <button
                     onClick={() => navigate('/project/new')}
-                    className='bg-black/40 w-fit px-4 py-2 rounded'
+                    className='bg-purple-600 w-fit px-4 py-2 rounded'
                 >
                     Novo Projeto
                 </button>
                 <button
                     onClick={() => logout()}
-                    className='bg-black/40 w-fit px-4 py-2 rounded'
+                    className='bg-purple-600 w-fit px-4 py-2 rounded'
                 >
                     Logout
                 </button>
                 <button
                     onClick={() => navigate('/profile')}
-                    className='bg-black/40 w-fit px-4 py-2 rounded'
+                    className='bg-purple-600 w-fit px-4 py-2 rounded'
                 >
                     Perfil
                 </button>
