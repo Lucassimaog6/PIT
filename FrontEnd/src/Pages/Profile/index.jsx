@@ -165,7 +165,7 @@ export default function Profile() {
 
                 <button
                     onClick={handleDelete}
-                    className='bg-red-300 mx-auto w-fit px-4 py-2 rounded'
+                    className='bg-red-700 mx-auto w-fit px-4 py-2 rounded'
                 >
                     Deletar conta
                 </button>
