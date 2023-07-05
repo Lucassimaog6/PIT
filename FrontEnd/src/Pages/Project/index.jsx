@@ -75,17 +75,17 @@ export default function Project() {
 					<div className="inline-flex rounded-md shadow-sm">
 						<button type="button"
 								onClick={() => setDificulty("1")}
-								className={`${dificulty === "1" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg`}>
+								className={`${dificulty === "1" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg bg-yellow-600`}>
 							Fácil
 						</button>
 						<button type="button"
 								onClick={() => setDificulty("2")}
-								className={`${dificulty === "2" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200`}>
+								className={`${dificulty === "2" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 bg-yellow-600`}>
 							Médio
 						</button>
 						<button type="button"
 								onClick={() => setDificulty("3")}
-								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-md`}>
+								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-md bg-yellow-600`}>
 							Difícil
 						</button>
 					</div>
