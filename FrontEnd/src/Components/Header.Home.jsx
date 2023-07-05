@@ -13,7 +13,7 @@ export default function HeaderHome() {
     }, [user]);
 
     return (
-        <header className='grid grid-cols-1 md:grid-cols-[auto_1fr] items-center p-4'>
+        <header className='grid grid-cols-1 md:grid-cols-[auto_1fr] items-center p-4 bg-amber-500'>
             <p className='text-center p-4 text-2xl'>
                 Bem vindo: <span>{userName}</span>
             </p>
