@@ -53,7 +53,7 @@ export default function Project() {
 				<label htmlFor='title'>
 					Nome do projeto:
 					<input
-						className='w-full p-2 bg-black/20 rounded bg-white'
+						className='w-full p-2 bg-black/20 rounded bg-white text-black'
 						type='text'
 						id='title'
 						ref={title}
@@ -97,7 +97,7 @@ export default function Project() {
 				>
 					Descrição:
 					<textarea
-						className='p-2 bg-black/20 rounded-md bg-white'
+						className='p-2 bg-black/20 rounded-md bg-white text-black'
 						name='description'
 						id='description'
 						cols='30'
@@ -109,7 +109,7 @@ export default function Project() {
 				<label htmlFor='linkImage'>
 					Link da imagem:
 					<input
-						className='w-full p-2 bg-black/20 rounded-md bg-white'
+						className='w-full p-2 bg-black/20 rounded-md bg-white text-black'
 						type='text'
 						id='linkImage'
 						ref={linkImage}
