@@ -117,7 +117,7 @@ export default function Project() {
 				</label>
 
 				<button
-					className='w-full p-2 bg-black/40 rounded'
+					className='w-full p-2 bg-black/40 rounded bg-fuchsia-950'
 					onClick={handleNewProject}
 				>
 					Enviar
