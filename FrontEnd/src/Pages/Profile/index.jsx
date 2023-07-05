@@ -158,7 +158,7 @@ export default function Profile() {
 
                 <button
                     onClick={handleUpdate}
-                    className='bg-yellow-600 mx-auto w-fit px-4 py-2 rounded'
+                    className='bg-amber-500 mx-auto w-fit px-4 py-2 rounded'
                 >
                     Atualizar
                 </button>
