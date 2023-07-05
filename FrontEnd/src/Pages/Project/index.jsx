@@ -53,7 +53,7 @@ export default function Project() {
 				<label htmlFor='title'>
 					Nome do projeto:
 					<input
-						className='w-full p-2 bg-black/20 rounded'
+						className='w-full p-2 bg-black/20 rounded bg-white'
 						type='text'
 						id='title'
 						ref={title}
@@ -85,7 +85,7 @@ export default function Project() {
 						</button>
 						<button type="button"
 								onClick={() => setDificulty("3")}
-								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-md bg-yellow-600`}>
+								className={`${dificulty === "3" ? 'bg-amber-400' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-ld bg-yellow-600`}>
 							Difícil
 						</button>
 					</div>
@@ -97,7 +97,7 @@ export default function Project() {
 				>
 					Descrição:
 					<textarea
-						className='p-2 bg-black/20 rounded-md '
+						className='p-2 bg-black/20 rounded-md bg-white'
 						name='description'
 						id='description'
 						cols='30'
@@ -109,7 +109,7 @@ export default function Project() {
 				<label htmlFor='linkImage'>
 					Link da imagem:
 					<input
-						className='w-full p-2 bg-black/20 rounded-md'
+						className='w-full p-2 bg-black/20 rounded-md bg-white'
 						type='text'
 						id='linkImage'
 						ref={linkImage}
