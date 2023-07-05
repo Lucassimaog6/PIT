@@ -34,7 +34,7 @@ export default function Filter() {
 	};
 
 	return (
-		<main>
+		<main className='flex flex-col gap-2'>
 			<aside>
 				<div className='flex flex-col'>
 					<h1 className='text-xl'>Dificuldade: </h1>
