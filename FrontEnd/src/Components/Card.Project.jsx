@@ -23,8 +23,8 @@ export default function CardProject(params) {
     }
 
     return (
-        <section className='flex flex-wrap bg-zinc-800 p-4 rounded-xl flex flex-col gap-2 border-4 border-amber-400'>
-            <h1 className='text-4xl flex items-center gap-2'>
+        <section className='bg-zinc-800 p-4 rounded-xl flex flex-col gap-2 border-4 border-amber-400'>
+            <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
                 <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
                     <span className='text-sm font-serif'>{dificultyText}</span>
