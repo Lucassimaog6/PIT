@@ -11,7 +11,6 @@ import Filter from './Pages/Filter';
 import Landing from "./Pages/Landing";
 import ProjectID from './Pages/Project/ProjectID';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Auth0Provider
         domain='dev-1ey1lh2q2hux3w6g.us.auth0.com'
