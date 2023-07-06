@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sincronizando ...
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.ftp_host }}
-        username: ${{ secrets.ftp_user }}
-        password: ${{ secrets.ftp_password }}
+        server: 15.229.86.2
+        username: admin
+        password: admin
