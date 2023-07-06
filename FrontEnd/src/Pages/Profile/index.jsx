@@ -74,11 +74,11 @@ export default function Profile() {
     };
 
     return (
-        <div className='min-h-screen flex'>
+        <div className='min-h-screen flex justify-center'>
             <button className='absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
-            <main className='flex flex-col gap-2 justify-center items-center text-center'>
+            <main className='flex flex-col gap-2'>
                 <h1 className='text-6xl text-center'>Perfil</h1>
                 <label htmlFor='name'>
                     Name:
