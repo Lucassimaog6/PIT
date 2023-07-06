@@ -36,8 +36,8 @@ export default function Filter() {
 	return (
 		<main>
 			<aside>
-				<div className='flex flex-col justify-center items-center w-100% h-100px bg-amber-500'>
-					<h1 className='text-xl'>Dificuldade: </h1>
+				<div className='flex flex-col w-100% h-100px bg-amber-500'>
+					<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
 					<label>
 						<input
 							onChange={() => changeDificulty(0)}
@@ -71,7 +71,7 @@ export default function Filter() {
 				return (
 					<div
 						key={p._id}
-						className='bg-black/40 rounded p-4 m-4'
+						className='bg-black/40 rounded p-4 m-4 mt-30px'
 					>
 						<h1 className='text-2xl'>{p.title}</h1>
 						<p>{p.description}</p>
