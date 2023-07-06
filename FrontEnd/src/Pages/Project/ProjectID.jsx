@@ -7,7 +7,7 @@ export default function ProjectID() {
     
     useEffect(() => {
         (async () => {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/${id}`);
+            const response = await fetch(`http://15.229.86.2:8000/projects/${id}`);
             const data = await response.json()
             setProject(data)
         })()
@@ -16,9 +16,9 @@ export default function ProjectID() {
 
     return (
         project ? (
-            <div>
-                <h1>{project.title}</h1>
-            </div>
+            <main>
+
+            </main>
         
         ) : (
             <h1>carregando</h1>

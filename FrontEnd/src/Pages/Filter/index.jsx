@@ -11,7 +11,7 @@ export default function Filter() {
 
 	useEffect(() => {
 		(async () => {
-			const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/date`);
+			const response = await fetch(`http://15.229.86.2:8000/projects/date`);
 			setProjects(await response.json());
 
 		})();
