@@ -74,7 +74,7 @@ export default function Profile() {
     };
 
     return (
-        <div className='min-h-screen flex justify-center'>
+        <div className='min-h-screen flex justify-center items-center'>
             <button className='absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
