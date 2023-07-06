@@ -78,7 +78,7 @@ export default function Profile() {
             <button className='absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
-            <main className='flex flex-col gap-2'>
+            <main className='flex flex-col gap-2 p-16 bg-amber-500 rounded-lg'>
                 <h1 className='text-6xl text-center'>Perfil</h1>
                 <label htmlFor='name'>
                     Name:
@@ -158,14 +158,14 @@ export default function Profile() {
 
                 <button
                     onClick={handleUpdate}
-                    className='bg-amber-500 mx-auto w-fit px-4 py-2 rounded'
+                    className='bg-purple-600 px-4 py-2 rounded'
                 >
                     Atualizar
                 </button>
 
                 <button
                     onClick={handleDelete}
-                    className='bg-red-700 mx-auto w-fit px-4 py-2 rounded'
+                    className='bg-red-700 px-4 py-2 rounded'
                 >
                     Deletar conta
                 </button>
