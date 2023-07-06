@@ -36,7 +36,7 @@ export default function Filter() {
 	return (
 		<main>
 			<aside>
-				<div className='flex flex-col w-100% h-100px bg-amber-500'>
+				<div className='flex flex-row items-center justify-around w-100% h-12 bg-amber-500'>
 					<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
 					<label>
 						<input
