@@ -6,11 +6,13 @@ export default function Project() {
 
 	const title = useRef('');
 	const [dificulty, setDificulty] = useState('');
+	const [stack, setStack] = useState('')
 	const description = useRef('');
 	const linkImage = useRef('');
 
 	const handleNewProject = async () => {
 		if (dificulty === '') return alert('Selecione uma dificuldade!');
+		if (stack === '') return alert('Selecione uma Stack!');
 		if (title.current.value === '') return alert('Digite um título!');
 		if (description.current.value === '') return alert('Digite uma descrição!');
 
@@ -19,6 +21,7 @@ export default function Project() {
 			dificulty: dificulty,
 			description: description.current.value,
 			linkImage: linkImage.current.value,
+			tags: [stack],
 			owner: localStorage.getItem('id'),
 		};
 
@@ -62,16 +65,6 @@ export default function Project() {
 
 				<label htmlFor='dificulty' className='flex flex-col'>
 					Dificuldade:
-					{/*<select*/}
-					{/*	className='w-full p-2 bg-black/20 rounded'*/}
-					{/*	name='dificulty'*/}
-					{/*	id='dificulty'*/}
-					{/*	ref={dificulty}*/}
-					{/*>*/}
-					{/*	<option value='1'>Fácil</option>*/}
-					{/*	<option value='2'>Médio</option>*/}
-					{/*	<option value='3'>Difícil</option>*/}
-					{/*</select>*/}
 					<div className="inline-flex rounded-md shadow-sm">
 						<button type="button"
 								onClick={() => setDificulty("1")}
@@ -87,6 +80,22 @@ export default function Project() {
 								onClick={() => setDificulty("3")}
 								className={`${dificulty === "3" ? 'bg-purple-600' : ''} px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md `}>
 							Difícil
+						</button>
+					</div>
+				</label>
+
+				<label htmlFor='stack' className='flex flex-col'>
+					Stack:
+					<div className="inline-flex rounded-md shadow-sm">
+						<button type="button"
+								onClick={() => setStack("back")}
+								className={`${stack === "back" ? 'bg-purple-600' : ''} px-4 py-2 w-1/2 text-sm font-medium text-white border border-r-0 border-gray-200 rounded-l-lg `}>
+							BackEnd
+						</button>
+						<button type="button"
+								onClick={() => setStack("front")}
+								className={`${stack === "front" ? 'bg-purple-600' : ''} px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md `}>
+							FrontEnd
 						</button>
 					</div>
 				</label>

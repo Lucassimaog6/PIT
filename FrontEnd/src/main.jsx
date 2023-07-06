@@ -9,6 +9,7 @@ import Profile from './Pages/Profile';
 import Project from './Pages/Project';
 import Filter from './Pages/Filter';
 import Landing from "./Pages/Landing";
+import ProjectID from './Pages/Project/ProjectID';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -47,6 +48,10 @@ function App() {
             <Route
                 path='/project/filter'
                 element={<Filter/>}
+            />
+            <Route 
+                path='/p/:id'
+                element={<ProjectID/>}
             />
         </Routes>
     );

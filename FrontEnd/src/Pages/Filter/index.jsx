@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react';
+import CardProjects from '../../Components/Card.Project';
+import {useNavigate} from 'react-router-dom';
 
 export default function Filter() {
+	const navigate = useNavigate();
+
 	const [projects, setProjects] = useState([]);
 	const [dificulty, setDificulty] = useState([false, false, false]);
+	const [stack, setStack] = useState('')
 
 	useEffect(() => {
 		(async () => {
 			const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/date`);
 			setProjects(await response.json());
+
 		})();
 	}, []);
 
@@ -19,9 +25,10 @@ export default function Filter() {
 			}
 		});
 		setDificulty(newDificulty);
+		console.log(projects)
 	};
 
-	const filterProjects = (projects) => {
+	const filterDificulty = (projects) => {
 		if (dificulty[0] && projects.dificulty === '1') {
 			return true;
 		} else if (dificulty[1] && projects.dificulty === '2') {
@@ -33,54 +40,87 @@ export default function Filter() {
 		}
 	};
 
+	const changeStack = (_stack) => {
+		if (stack === _stack) {
+			setStack('')
+		} else {
+			setStack(_stack)
+		}
+	}
+
+	const filterStack = (projects) => {
+		if (projects.tags.includes(stack)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	return (
-		<main>
-			<aside>
-				<div className='flex flex-row items-center justify-around w-100% h-12 bg-amber-500'>
-					<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
-					<label>
-						<input
-							onChange={() => changeDificulty(0)}
-							checked={dificulty[0]}
-							className='mx-2'
-							type='checkbox'
-						/>
-						Fácil
-					</label>
-					<label>
-						<input
-							onChange={() => changeDificulty(1)}
-							checked={dificulty[1]}
-							className='mx-2'
-							type='checkbox'
-						/>
-						Médio
-					</label>
-					<label>
-						<input
-							onChange={() => changeDificulty(2)}
-							checked={dificulty[2]}
-							className='mx-2'
-							type='checkbox'
-						/>
-						Difícil
-					</label>
-				</div>
+		<main className='grid grid-cols-[auto_1fr]'>
+			<aside className='min-h-screen p-4 '>
+			<button className='bg-amber-500 py-1 px-2 rounded'
+                    onClick={() => navigate('/home')}>Voltar
+            </button>
+				{/* Dificuldade */}
+				<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
+				<label>
+					<input
+						onChange={() => changeDificulty(0)}
+						checked={dificulty[0]}
+						className='mx-2'
+						type='checkbox'
+					/>
+					Fácil
+				</label>
+				<label>
+					<input
+						onChange={() => changeDificulty(1)}
+						checked={dificulty[1]}
+						className='mx-2'
+						type='checkbox'
+					/>
+					Médio
+				</label>
+				<label>
+					<input
+						onChange={() => changeDificulty(2)}
+						checked={dificulty[2]}
+						className='mx-2'
+						type='checkbox'
+					/>
+					Difícil
+				</label>
+
+				{/* Linguagens */}
+				<h1 className='text-xl justify-center items-center'>Linguagens</h1>
+				<label>
+					<input
+						onChange={() => changeStack('front')}
+						checked={stack === 'front'}
+						className='mx-2'
+						type='checkbox'
+					/>
+					FrontEnd
+				</label>
+				<label>
+					<input
+						onChange={() => changeStack('back')}
+						checked={stack === 'back'}
+						className='mx-2'
+						type='checkbox'
+					/>
+					BackEnd
+				</label>
 			</aside>
-			{projects.filter(filterProjects).map((p) => {
-				return (
-					<div
-						key={p._id}
-						className='bg-black/40 rounded p-4 m-4 mt-30px'
-					>
-						<h1 className='text-2xl'>{p.title}</h1>
-						<p>{p.description}</p>
-						<p>
-							Dificuldade: <span>{p.dificulty}</span>
-						</p>
-					</div>
-				);
-			})}
+			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-8'>
+				{projects.filter(filterDificulty).filter(filterStack).map((p) => {
+					return (
+						<CardProjects key={p._id} project={p} />
+					);
+				})}
+			</div>
+
 		</main>
 	);
 }

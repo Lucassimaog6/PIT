@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import SwitchTheme from '../../Components/SwitchTheme';
 
 export default function Profile() {
     const navigate = useNavigate();
@@ -75,6 +76,9 @@ export default function Profile() {
 
     return (
         <div className='min-h-screen flex justify-center items-center'>
+            <div className='absolute top-4 right-4'>
+                <SwitchTheme />
+            </div>
             <button className='absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>

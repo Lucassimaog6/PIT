@@ -1,6 +1,9 @@
-import imagempro from '../Assets/projeto.jpg' 
+import imagempro from '../Assets/projeto.jpg'
+import { useNavigate } from 'react-router-dom';
 
 export default function CardProject(params) {
+    const navigate = useNavigate();
+
     const project = params.project;
     const ProjectDificulty = project.dificulty;
 
@@ -25,8 +28,9 @@ export default function CardProject(params) {
     }
 
     return (
-        <section className='bg-amber-500 p-4 rounded-xl flex flex-col gap-2 h-full'>
-         <img class="h-48" src={imagempro} alt="Imagem Projeto"/>
+        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-amber-500 p-4 rounded-xl flex flex-col gap-2 h-full'>
+            <img
+                className="h-48" src={imagempro} alt="Imagem Projeto" />
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
                 <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
