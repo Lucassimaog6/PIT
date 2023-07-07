@@ -6,6 +6,7 @@ export default function ProjectID() {
     const { id } = useParams()
     const [project, setProject] = useState()
     const navigate = useNavigate();
+    let description = project.description;
     
     useEffect(() => {
         (async () => {
@@ -22,7 +23,9 @@ export default function ProjectID() {
                 <button className='bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
                 </button>
-                <div>Seu projeto</div>
+            <p className="mt-5">
+                {description}
+            </p>
             </main>
         
         ) : (
