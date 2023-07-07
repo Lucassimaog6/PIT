@@ -46,58 +46,6 @@ export default function Landing() {
         <main className=' min-h-screen bg-zinc-900 grid grid-rows-[auto_1f]'>
             <LandingHeader />
 
-            
-
-        <div className="flex flex-col md:flex-row bg-amber-400 items-center justify-center h-64 gap-24">
-            <div className="w-full md:w-1/2">
-                <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">
-                <img src={programas} />
-                <p>Seu melhor amigo para o aprendizado prático</p>
-                </div>
-            </div>
-                <img src={banana} className="h-full" />
-        </div>
-
-        <div className="flex flex-wrap justify-center py-8">
-            <div className="w-1/3 md:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
-                    <img src={code} alt="Imagem" />
-                    <div className="p-4">
-                    <p className="text-lg font-bold">Veja e Code</p>
-                    <p className="text-sm">Comece o desafio baixando os arquivos. Nos te damos todos os arquivos necessários para você finalizar o projeto.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="w-1/3 md:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
-                    <img src={share} alt="Imagem" />
-                    <div className="p-4">
-                    <p className="text-lg font-bold">Envie a solução</p>
-                    <p className="text-sm">Poste sua solução na nossa plataforma para que todos possam ver e dar um feedback em nossa comunidade.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="w-1/3 md:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
-                    <img src={chat} alt="Imagem" />
-                    <div className="p-4">
-                    <p className="text-lg font-bold">Dê feedbacks</p>
-                    <p className="text-sm">Tenha pensamento crítico sobre o código de outros e ajude-os a melhorarem seus códigos com a comunidade.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-            <div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
-                <div className='flex flex-col gap-8 text-center px-4 md:px-16'>
-                    <h1 className='text-4xl md:text-6xl'>Aprenda a programar de forma prática com projetos reais</h1>
-                    <p className='text-sm md:text-xl'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur corporis dicta
-                        doloribus dolorum earum magnam magni placeat sapiente. Autem, consequuntur deserunt in nulla
-                        possimus praesentium quae quod tempore veritatis voluptatibus? Adipisci aperiam deserunt eaque,
-                        praesentium repellat tempore temporibus totam!</p>
-                </div>
-            </div>
             <div className='md:hidden mx-auto'>
                 <nav className='flex gap-8'>
                     <Link to='#'>
@@ -117,6 +65,49 @@ export default function Landing() {
                     </Link>
                 </nav>
             </div>
+
+            
+
+        <div className="flex flex-col md:flex-row bg-amber-400 items-center justify-center h-64 gap-24">
+            <div className="w-full md:w-1/2">
+                <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">
+                <img src={programas} />
+                <p className="text-center">Seu melhor amigo para o aprendizado prático</p>
+                </div>
+            </div>
+                <img src={banana} className="h-full hidden md:block" />
+        </div>
+
+        <div className="flex flex-wrap justify-center py-8 md:flex-col lg:flex-row">
+            <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                    <img src={code}/>
+                    <div className="p-4">
+                    <p className="text-lg font-bold">Veja e Code</p>
+                    <p className="text-sm">Comece o desafio baixando os arquivos. Nos te damos todos os arquivos necessários para você finalizar o projeto.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                    <img src={share}/>
+                    <div className="p-4">
+                    <p className="text-lg font-bold">Envie a solução</p>
+                    <p className="text-sm">Poste sua solução na nossa plataforma para que todos possam ver e dar um feedback em nossa comunidade.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                    <img src={chat}/>
+                    <div className="p-4">
+                    <p className="text-lg font-bold">Dê feedbacks</p>
+                    <p className="text-sm">Tenha pensamento crítico sobre o código de outros e ajude-os a melhorarem seus códigos com a comunidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </main>
     )
 }

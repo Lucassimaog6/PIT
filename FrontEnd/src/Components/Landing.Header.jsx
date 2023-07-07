@@ -7,23 +7,23 @@ export default function LandingHeader() {
     const {loginWithRedirect} = useAuth0()
 
     return (
-        <header className='h-fit px-4 flex justify-between items-center'>
+        <header className='h-fit px-4 flex justify-center md:justify-between items-center'>
             <img className='h-20' src={LogoImage} alt="Logo"/>
             <nav className='hidden md:flex gap-8 items-center'>
                 <Link to='#'>
-                    <p className='underline'>Home</p>
+                    <p>Home</p>
                 </Link>
 
                 <Link to='#'>
-                    <p className='underline'>Serviços</p>
+                    <p>Serviços</p>
                 </Link>
 
                 <Link to='#'>
-                    <p className='underline'>Sobre Nós</p>
+                    <p>Sobre Nós</p>
                 </Link>
 
                 <Link to='#'>
-                    <p className='underline'>Preços</p>
+                    <p>Preços</p>
                 </Link>
 
                 <button
