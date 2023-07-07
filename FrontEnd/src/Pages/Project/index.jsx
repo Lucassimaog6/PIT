@@ -25,7 +25,7 @@ export default function Project() {
 			owner: localStorage.getItem('id'),
 		};
 
-		const response = await fetch(`http://15.229.86.2:8000/projects`, {
+		const response = await fetch(`${import.meta.env.VITE_API_URL}/projects`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

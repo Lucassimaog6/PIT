@@ -16,7 +16,7 @@ export default function Profile() {
 
     useState(() => {
         (async () => {
-            const response = await fetch(`http://15.229.86.2:8000/users/${user}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${user}`);
             const _user = await response.json();
 
             setName(_user.name);
@@ -41,7 +41,7 @@ export default function Profile() {
             degree,
             genre,
         };
-        const response = await fetch(`http://15.229.86.2:8000/users/${user}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${user}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export default function Profile() {
     };
 
     const handleDelete = async () => {
-        const response = await fetch(`http://15.229.86.2:8000/users/${user}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${user}`, {
             method: 'DELETE',
         });
 

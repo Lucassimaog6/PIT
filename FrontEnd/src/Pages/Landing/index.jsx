@@ -15,7 +15,7 @@ export default function Landing() {
     const handleLogin = async () => {
         if (!user) return
 
-        const response = await fetch(`http://15.229.86.2:8000/login`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
