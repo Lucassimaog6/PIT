@@ -57,12 +57,12 @@ export default function Filter() {
 	}
 
 	return (
-		<main className='grid grid-cols-[auto_1fr]'>
-			<aside className='min-h-screen p-4 '>
+		<main className='grid grid-cols-[auto_1fr] md:flex md:flex-wrap'>
+			<aside className='min-h-screen p-4 md:min-h-0'>
 			<button className='bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
-			<section>
+			<section className='flex flex-col mt-5'>
 				{/* Dificuldade */}
 				<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
 				<label>
@@ -94,7 +94,7 @@ export default function Filter() {
 				</label>
 			</section>
 
-			<div>
+			<div className='flex flex-col mt-2.5'>
 				{/* Linguagens */}
 				<h1 className='text-xl justify-center items-center'>Linguagens</h1>
 				<label>
