@@ -23,7 +23,10 @@ export default function ProjectID() {
                     onClick={() => navigate('/home')}>Voltar
                 </button>
                 <p className="mt-5">
+                    Descrição do projeto:
                     {project.description}
+                    Nível: 
+                    {project.dificulty}
                 </p>
             </main>
         
