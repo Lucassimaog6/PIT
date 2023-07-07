@@ -22,12 +22,10 @@ export default function ProjectID() {
                 <button className='bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
                 </button>
-                <p className="mt-5">
-                    Descrição do projeto:
-                    {project.description}
-                    Nível: 
-                    {project.dificulty}
-                </p>
+                <p className="mt-5">Descrição do projeto: </p>
+                <p>{project.description}</p>
+                <p>Nível: </p>
+                <p>{project.dificulty}</p>
             </main>
         
         ) : (
