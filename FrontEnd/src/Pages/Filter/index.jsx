@@ -58,7 +58,7 @@ export default function Filter() {
 
 	return (
 		<main className='grid grid-cols-[auto_1fr] md:flex md:flex-wrap'>
-			<aside className='min-h-screen p-4 md:min-h-0'>
+			<aside className='min-h-0 md:min-h-screen p-4'>
 			<button className='bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
