@@ -117,7 +117,7 @@ export default function Filter() {
 				</label>
 			</div>
 			</aside>
-			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-8'>
+			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-8 min-h-0 md:min-h-screen'>
 				{projects.filter(filterDificulty).filter(filterStack).map((p) => {
 					return (
 						<CardProjects key={p._id} project={p} />
