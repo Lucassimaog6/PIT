@@ -62,6 +62,7 @@ export default function Filter() {
 			<button className='bg-amber-500 py-1 px-2 rounded'
                     onClick={() => navigate('/home')}>Voltar
             </button>
+			<section>
 				{/* Dificuldade */}
 				<h1 className='text-xl justify-center items-center'>Dificuldade</h1>
 				<label>
@@ -91,7 +92,9 @@ export default function Filter() {
 					/>
 					Difícil
 				</label>
+			</section>
 
+			<div>
 				{/* Linguagens */}
 				<h1 className='text-xl justify-center items-center'>Linguagens</h1>
 				<label>
@@ -112,6 +115,7 @@ export default function Filter() {
 					/>
 					BackEnd
 				</label>
+			</div>
 			</aside>
 			<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-8'>
 				{projects.filter(filterDificulty).filter(filterStack).map((p) => {

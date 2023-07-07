@@ -11,7 +11,7 @@ export default function LandingHeader() {
             <img className='h-20' src={LogoImage} alt="Logo"/>
             <nav className='hidden md:flex gap-8 items-center'>
                 <Link to='#'>
-                    <p>Home</p>
+                    <a href="/home"><p>Home</p></a>
                 </Link>
 
                 <Link to='#'>
