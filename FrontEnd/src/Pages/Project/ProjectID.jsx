@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import {useNavigate} from 'react-router-dom';
 
 export default function ProjectID() {
     const { id } = useParams()
     const [project, setProject] = useState()
+    const navigate = useNavigate();
     
     useEffect(() => {
         (async () => {
