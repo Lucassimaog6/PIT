@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CardProjects from '../../Components/Card.Project';
 import {useNavigate} from 'react-router-dom';
+import HeaderHome from '../../Components/Header.Home';
 
 export default function Filter() {
 	const navigate = useNavigate();
@@ -57,6 +58,8 @@ export default function Filter() {
 	}
 
 	return (
+		<>
+		<HeaderHome/>
 		<main className='flex flex-wrap grid-cols-[auto_1fr] md:grid'>
 			<aside className='min-h-0 md:min-h-screen p-4'>
 			<button className='bg-amber-500 py-1 px-2 rounded'
@@ -126,5 +129,6 @@ export default function Filter() {
 			</div>
 
 		</main>
+		</>
 	);
 }
