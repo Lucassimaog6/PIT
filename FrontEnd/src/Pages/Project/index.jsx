@@ -49,13 +49,13 @@ export default function Project() {
       <HeaderHome />
       <div className="min-h-screen flex items-center justify-center">
         <button
-          className="absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded"
+          className="absolute top-2 left-2 bg-zinc-70 py-1 px-2 rounded"
           onClick={() => navigate("/home")}
         >
           Voltar
         </button>
 
-        <main className="flex flex-col gap-2 p-16 bg-amber-500 rounded-lg mt-0 md:mt-16">
+        <main className="flex flex-col gap-2 p-16 bg-zinc-70 rounded-lg mt-0 md:mt-16">
           <h1 className="text-center text-6xl">Novo Projeto</h1>
           <label htmlFor="title">
             Nome do projeto:

@@ -91,12 +91,12 @@ export default function Profile() {
           <SwitchTheme />
         </div>
         <button
-          className="absolute top-2 left-2 bg-amber-500 py-1 px-2 rounded"
+          className="absolute top-2 left-2 bg-zinc-70 py-1 px-2 rounded"
           onClick={() => navigate("/home")}
         >
           Voltar
         </button>
-        <main className="flex flex-col gap-2 p-8 bg-amber-500 rounded-lg">
+        <main className="flex flex-col gap-2 p-8 bg-zinc-70 rounded-lg">
           <h1 className="text-6xl text-center">Perfil</h1>
           <label htmlFor="name">
             Name:

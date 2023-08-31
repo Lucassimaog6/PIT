@@ -43,7 +43,7 @@ export default function ProjectID() {
     return (
         project ? (
             <>
-                <button className='m-2 bg-amber-500 py-1 px-2 rounded'
+                <button className='m-2 bg-zinc-70 py-1 px-2 rounded'
                         onClick={() => navigate('/home')}>Voltar
                 </button>
                 <main className='min-h-screen grid items-center justify-center'>

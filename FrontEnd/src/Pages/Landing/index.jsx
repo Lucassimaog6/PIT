@@ -68,7 +68,7 @@ export default function Landing() {
 
             
 
-        <div className="flex flex-col md:flex-row bg-amber-400 items-center justify-center h-64 gap-24">
+        <div className="flex flex-col md:flex-row bg-zinc-700 items-center justify-center h-64 gap-24">
             <div className="w-full md:w-1/2">
                 <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">
                 <img src={programas} />
