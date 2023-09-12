@@ -113,6 +113,48 @@ function getProjectsByDificulty(req: Request, res: Response) {
 		});
 }
 
+// Adiciona um comentário ao projeto
+async function addComment(req: Request, res: Response) {
+	const id = req.params.id;
+	const { comment } = req.body;
+	try {
+		const project = await Project.findById(id);
+		if (project) {
+			project.comments.push(comment);
+			project.save();
+			res.status(200).json(comment);
+		} else {
+			res.status(400).json({ message: 'Projeto não encontrado' });
+		}
+	} catch (err) {
+		res.status(400).json(err);
+	}
+}
+
+async function newWorkingUser(req: Request, res: Response) {
+	const id = req.params.id;
+	const { userEmail } = req.body;
+	const user = await User.findOne({ email: userEmail });
+	if (!user) {
+		res.status(400).json({ message: 'Usuário não encontrado' });
+	}
+
+	const userId = user?._id.toString();
+
+	try {
+		const project = await Project.findById(id);
+		if (project) {
+			project.workingUsers.push(userId!);
+			project.save();
+			res.status(200).json(user);
+		} else {
+			res.status(400).json({ message: 'Projeto não encontrado' });
+		}
+	} catch (err) {
+		res.status(400).json(err);
+	}
+}
+
 export {
 	createProject,
 	getProject,
@@ -121,4 +163,6 @@ export {
 	upvoteProject,
 	downvoteProject,
 	getProjectsByDificulty,
+	addComment,
+	newWorkingUser,
 };

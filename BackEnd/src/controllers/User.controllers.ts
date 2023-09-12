@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { User } from '../models/User.models';
+import { Project } from '../models/Projects.models';
 
 // Lista todos os usuários
 function getAllUsers(req: Request, res: Response) {
@@ -65,4 +66,16 @@ function deleteUser(req: Request, res: Response) {
 	});
 }
 
-export { getAllUsers, getUser, createUser, updateUser, deleteUser };
+async function getProjects(req: Request, res: Response) {
+	const userId = req.params.id;
+	try {
+		const projects = await Project.find({
+			workingUsers: userId
+		})
+		res.status(200).json(projects);
+	} catch (error) {
+		res.status(400).json({ message: 'Failed to get projects', error });
+	}
+}
+
+export { getAllUsers, getUser, createUser, updateUser, deleteUser, getProjects };

@@ -62,9 +62,6 @@ export default function Filter() {
 		<HeaderHome/>
 		<main className='flex flex-wrap grid-cols-[auto_1fr] md:grid'>
 			<aside className='min-h-0 md:min-h-screen p-4'>
-			<button className='bg-stone-700 py-1 px-2 rounded'
-                    onClick={() => navigate('/home')}>Voltar
-            </button>
 			<section className='flex flex-col mt-5'>
 				{/* Dificuldade */}
 				<h1 className='text-xl justify-center items-center'>Dificuldade</h1>

@@ -1,13 +1,17 @@
-import {useEffect, useState} from "react"
-import {useParams, useNavigate} from "react-router-dom"
+import { useEffect, useState, useRef } from "react"
+import { useParams } from "react-router-dom"
+import HeaderHome from "../../Components/Header.Home"
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function ProjectID() {
-    const {id} = useParams()
+    const { id } = useParams()
     const [project, setProject] = useState()
     const [dificultyText, setDificultyText] = useState()
     const [dificultyColor, setDificultyColor] = useState()
     const [owner, setOwner] = useState()
-    const navigate = useNavigate();
+    const [comments, setComments] = useState([])
+    const newComment = useRef()
+    const { user } = useAuth0()
 
     useEffect(() => {
         (async () => {
@@ -29,7 +33,9 @@ export default function ProjectID() {
                     setDificultyText('III');
                     break;
             }
+            console.log(data)
             getOwner(data.owner)
+            setComments(data.comments)
         })()
     }, [])
 
@@ -39,17 +45,61 @@ export default function ProjectID() {
         setOwner(data.name)
     }
 
+    async function handleNewComment() {
+        console.log(newComment.current.value)
+
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/comment/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                comment: newComment.current.value
+            })
+        })
+
+        const data = await response.json()
+        console.log(data)
+
+        if (response.ok) {
+            setComments([...comments, data])
+        } else {
+            alert(data.message)
+        }
+
+        newComment.current.value = ''
+    }
+
+
+    async function handleAssign() {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/working/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userEmail: user.email
+            })
+        })
+
+        const data = await response.json()
+        console.log(data)
+
+        if (response.ok) {
+            alert('Projeto iniciado com sucesso!')
+        } else {
+            alert(data.message)
+        }
+    }
 
     return (
         project ? (
             <>
-                <button className='m-2 bg-zinc-70 py-1 px-2 rounded'
-                        onClick={() => navigate('/home')}>Voltar
-                </button>
-                <main className='min-h-screen grid items-center justify-center'>
+                <HeaderHome />
+                <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center'>
                     <div className='bg-white/20 p-4 rounded-lg'>
-                        <h1 className='text-6xl'>Título: {project.title}</h1>
-                        <p className='text-2xl'>Descrição do projeto: {project.description}</p>
+                        <h1 className='text-5xl'>Título: {project.title}</h1>
+                        <p className='text-2xl'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
                         <label className='flex gap-2'>Nível:
                             <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
                                 <span className='text-sm font-serif'>{dificultyText}</span>
@@ -58,11 +108,36 @@ export default function ProjectID() {
                         <p className='text-2xl'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
                         <p>Autor: {owner}</p>
                     </div>
+
+                    <button className="bg-purple-500 w-fit px-4 py-2 rounded" onClick={() => handleAssign()}>
+                        Iniciar Projeto
+                    </button>
+                
+                    <div className="gap-4 flex flex-col p-4">                       
+                        <h1>Digite seu comentário:</h1>
+                        <div className="grid grid-cols-[1fr_auto] gap-4">
+                            <input type="text" id="comment" className="p-2 bg-white/20 rounded-md text-white" ref={newComment} />
+                            <button onClick={() => handleNewComment()} className="bg-purple-500 w-fit px-4 py-2 rounded">
+                                Enviar
+                            </button>
+                        </div>
+                        <ul className="flex flex-col gap-2 ">
+                            {comments.map((c) => {
+                                if (c) return (
+                                    <div className="bg-white/10 p-2 rounded">
+                                        <p>{c}</p>
+                                    </div>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </main>
             </>
-
         ) : (
-            <h1>carregando</h1>
+            <>
+                <HeaderHome />
+                <h1>carregando</h1>
+            </>
         )
     )
 }

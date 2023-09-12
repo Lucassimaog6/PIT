@@ -43,6 +43,7 @@ const ProjectSchema = new Schema({
 		default: 0,
 	},
 	completedUsers: [String],
+	workingUsers: [String],
 	comments: [String],
 });
 

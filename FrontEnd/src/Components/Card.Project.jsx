@@ -38,9 +38,9 @@ export default function CardProject(params) {
                 </div>
             </h1>
             <div className='flex gap-2'>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Tecnologia</span>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Framework</span>
+                <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Tecnologia</span>
+                <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
+                <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Framework</span>
             </div>
             <p>
                 {description}
