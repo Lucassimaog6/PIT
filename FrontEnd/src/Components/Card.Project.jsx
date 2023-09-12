@@ -28,7 +28,7 @@ export default function CardProject(params) {
     }
 
     return (
-        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-stone-700 p-4 rounded-xl flex flex-col gap-2 h-fit'>
+        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-slate-500 p-4 rounded-xl flex flex-col gap-2 h-fit'>
             <img
                 className="h-48" src={imagempro} alt="Imagem Projeto" />
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
@@ -38,9 +38,9 @@ export default function CardProject(params) {
                 </div>
             </h1>
             <div className='flex gap-2'>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Tecnologia</span>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
-                <span className='bg-purple-600 rounded-full text-sm py-0.5 px-3'>Framework</span>
+                <span className='bg-purple-300 rounded-full text-sm py-0.5 px-3'>Tecnologia</span>
+                <span className='bg-purple-300 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
+                <span className='bg-purple-300 rounded-full text-sm py-0.5 px-3'>Framework</span>
             </div>
             <p>
                 {description}
