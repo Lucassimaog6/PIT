@@ -74,6 +74,7 @@ export default function Landing() {
                 </nav>
             </div>
 
+                </nav>
             
 
         <div className="flex flex-col md:flex-row bg-zinc-700 items-center justify-center h-64 gap-24">
