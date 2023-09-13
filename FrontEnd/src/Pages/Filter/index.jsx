@@ -61,9 +61,6 @@ export default function Filter() {
 		<>
 		<HeaderHome/>
 		<main className='flex flex-wrap grid-cols-[auto_1fr] md:grid'>
-			<div className="absolute top-4 right-4">
-			<SwitchTheme />
-			</div>
 			<aside className='min-h-0 md:min-h-screen p-4'>
 			<section className='flex flex-col mt-5'>
 				{/* Dificuldade */}
