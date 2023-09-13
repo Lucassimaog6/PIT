@@ -13,7 +13,7 @@ export default function HeaderHome() {
     }, [user]);
 
     return (
-        <header className='grid grid-cols-1 md:grid-cols-[auto_auto_1fr] items-center p-4 bg-stone-700'>
+        <header className='grid grid-cols-1 md:grid-cols-[auto_auto_1fr] items-center p-4 bg-stone-700 dark:bg-stone-700'>
             <button className='m-2 bg-purple-600 py-2 px-3 rounded' onClick={() => navigate(-1)}>
                 Voltar
             </button>

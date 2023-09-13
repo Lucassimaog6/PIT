@@ -21,7 +21,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className='bg-zinc-900 min-h-screen'>
+		<main className='bg-zinc-900 min-h-screen dark:bg-white'>
 			<HeaderHome/>
 			<h1 className='text-4xl text-center col-span-3 p-8'>Adicionados recentemente:</h1>
 			{projects.length > 0 ? (

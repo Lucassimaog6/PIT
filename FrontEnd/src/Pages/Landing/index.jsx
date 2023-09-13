@@ -43,7 +43,7 @@ export default function Landing() {
 
 
     return (
-        <main className=' min-h-screen bg-zinc-900 grid grid-rows-[auto_1f]'>
+        <main className=' min-h-screen bg-zinc-900 grid grid-rows-[auto_1f] dark:bg-white'>
             <LandingHeader />
 
             <div className='md:hidden mx-auto'>
@@ -80,7 +80,7 @@ export default function Landing() {
 
         <div className="flex flex-wrap justify-center py-8 md:flex-col lg:flex-row">
             <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center pt-6 dark:bg-stone-700">
                     <img src={code}/>
                     <div className="p-4">
                     <p className="text-lg font-bold">Veja e Code</p>
@@ -89,7 +89,7 @@ export default function Landing() {
                 </div>
             </div>
             <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center pt-6 dark:bg-stone-700">
                     <img src={share}/>
                     <div className="p-4">
                     <p className="text-lg font-bold">Envie a solução</p>
@@ -98,7 +98,7 @@ export default function Landing() {
                 </div>
             </div>
             <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
-                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center">
+                <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center pt-6 dark:bg-stone-700">
                     <img src={chat}/>
                     <div className="p-4">
                     <p className="text-lg font-bold">Dê feedbacks</p>
