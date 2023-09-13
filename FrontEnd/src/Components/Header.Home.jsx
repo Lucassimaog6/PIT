@@ -21,6 +21,7 @@ export default function HeaderHome() {
             <p className='text-center p-4 text-2xl'>
                 Bem vindo: <span>{userName}</span>
             </p>
+            
             <div className='justify-self-center md:justify-self-end flex gap-4'>
                 <button
                     onClick={() => navigate('/project/filter')}
