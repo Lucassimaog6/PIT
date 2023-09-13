@@ -28,7 +28,7 @@ export default function CardProject(params) {
     }
 
     return (
-        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-slate-500 p-4 rounded-xl flex flex-col gap-2 h-fit'>
+        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-stone-700 p-4 rounded-xl flex flex-col gap-2 h-fit'>
             <img
                 className="h-48" src={imagempro} alt="Imagem Projeto" />
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
