@@ -54,28 +54,36 @@ export default function Landing() {
             <p className="underline">Home</p>
           </Link>
 
-          <Link to="#">
-            <p className="underline">Serviços</p>
-          </Link>
+            <div className='md:hidden mx-auto'>
+                <nav className='flex gap-8'>
+                    <Link to='#'>
+                        <p className='underline text-white dark:text-slate-700'>Home</p>
+                    </Link>
 
-          <Link to="#">
-            <p className="underline">Sobre Nós</p>
-          </Link>
+                    <Link to='#'>
+                        <p className='underline dark:text-slate-700'>Serviços</p>
+                    </Link>
 
-          <Link to="#">
-            <p className="underline">Preços</p>
-          </Link>
-        </nav>
-      </div>
+                    <Link to='#'>
+                        <p className='underline dark:text-slate-700'>Sobre Nós</p>
+                    </Link>
 
-      <div className="flex flex-col md:flex-row bg-zinc-700 items-center justify-center h-64 gap-24">
-        <div className="w-full md:w-1/2">
-          <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">
-            <img src={programas} />
-            <p className="text-center">
-              Seu melhor amigo para o aprendizado prático
-            </p>
-          </div>
+                    <Link to='#'>
+                        <p className='underline dark:text-slate-700'>Preços</p>
+                    </Link>
+                </nav>
+            </div>
+
+            
+
+        <div className="flex flex-col md:flex-row bg-zinc-700 items-center justify-center h-64 gap-24">
+            <div className="w-full md:w-1/2">
+                <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">
+                <img src={programas} />
+                <p className="text-center">Seu melhor amigo para o aprendizado prático</p>
+                </div>
+            </div>
+                <img src={banana} className="h-full hidden md:block" />
         </div>
         <img src={banana} className="h-full hidden md:block" />
       </div>
@@ -93,31 +101,7 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
-          <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center pt-6 dark:bg-stone-700">
-            <img src={share} />
-            <div className="p-4">
-              <p className="text-lg font-bold">Envie a solução</p>
-              <p className="text-sm">
-                Poste sua solução na nossa plataforma para que todos possam ver
-                e dar um feedback em nossa comunidade.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="w-full md:w-1/3 lg:w-1/4 lg:w-1/4 p-4 flex justify-center">
-          <div className="rounded-lg shadow text-center h-full flex flex-col items-center justify-center pt-6 dark:bg-stone-700">
-            <img src={chat} />
-            <div className="p-4">
-              <p className="text-lg font-bold">Dê feedbacks</p>
-              <p className="text-sm">
-                Tenha pensamento crítico sobre o código de outros e ajude-os a
-                melhorarem seus códigos com a comunidade.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+
+        </main>
+    )
 }
