@@ -1,10 +1,10 @@
-import express from 'express';
 import cors from 'cors';
-import { userRouter } from './routes/User.routes';
-import { registerRouter } from './routes/Register.routes';
+import express from 'express';
+import { connectToDatabase } from './database';
 import { loginRouter } from './routes/Login.routes';
 import { projectRouter } from './routes/Project.routes';
-import { connectToDatabase } from './database';
+import { registerRouter } from './routes/Register.routes';
+import { userRouter } from './routes/User.routes';
 
 connectToDatabase()
 	.then(() => {

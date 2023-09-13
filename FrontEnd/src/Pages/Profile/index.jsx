@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderHome from "../../Components/Header.Home";
 import CardProject from '../../Components/Card.Project';
+import SwitchTheme from '../../Components/SwitchTheme';
+
 
 export default function Profile() {
 	const navigate = useNavigate();
@@ -98,6 +100,9 @@ export default function Profile() {
 		<>
 			<HeaderHome />
 			<div className="grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-[auto_1fr]">
+			<div className="absolute top-4 right-4">
+				<SwitchTheme />
+			</div>
 				<main className="flex flex-col gap-2 p-8 bg-zinc-70 rounded-lg">
 					<h1 className="text-6xl text-center">Perfil</h1>
 					<label htmlFor="name">
