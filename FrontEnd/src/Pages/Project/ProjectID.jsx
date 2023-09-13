@@ -96,7 +96,7 @@ export default function ProjectID() {
         project ? (
             <>
                 <HeaderHome />
-                <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center'>
+                <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-slate-400'>
                     <div className='bg-white/20 p-4 rounded-lg'>
                         <h1 className='text-5xl'>Título: {project.title}</h1>
                         <p className='text-2xl'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
