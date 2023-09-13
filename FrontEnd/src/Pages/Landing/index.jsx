@@ -49,19 +49,19 @@ export default function Landing() {
             <div className='md:hidden mx-auto'>
                 <nav className='flex gap-8'>
                     <Link to='#'>
-                        <p className='underline'>Home</p>
+                        <p className='underline text-white dark:text-slate-700'>Home</p>
                     </Link>
 
                     <Link to='#'>
-                        <p className='underline'>Serviços</p>
+                        <p className='underline dark:text-slate-700'>Serviços</p>
                     </Link>
 
                     <Link to='#'>
-                        <p className='underline'>Sobre Nós</p>
+                        <p className='underline dark:text-slate-700'>Sobre Nós</p>
                     </Link>
 
                     <Link to='#'>
-                        <p className='underline'>Preços</p>
+                        <p className='underline dark:text-slate-700'>Preços</p>
                     </Link>
                 </nav>
             </div>
