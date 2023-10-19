@@ -1,6 +1,6 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useAuth0} from "@auth0/auth0-react";
 import CardProject from "../../Components/Card.Project.jsx";
 import HeaderHome from "../../Components/Header.Home.jsx";
 
@@ -25,7 +25,7 @@ export default function Home() {
 			<HeaderHome/>
 			<h1 className='text-4xl text-center col-span-3 p-8'>Adicionados recentemente:</h1>
 			{projects.length > 0 ? (
-				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 xl:px-28 px-8'>
+				<div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 xl:px-28 px-8'>
 					{projects.map((p) => (
 						<CardProject key={p._id} project={p} />
 					))}
