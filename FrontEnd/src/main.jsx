@@ -1,15 +1,17 @@
+import { Auth0Provider } from "@auth0/auth0-react";
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {Auth0Provider} from "@auth0/auth0-react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import './index.css'
+import './index.css';
 
+import Filter from './Pages/Filter';
 import Home from './Pages/Home';
+import Landing from "./Pages/Landing";
 import Profile from './Pages/Profile';
 import Project from './Pages/Project';
-import Filter from './Pages/Filter';
-import Landing from "./Pages/Landing";
 import ProjectID from './Pages/Project/ProjectID';
+
+const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Auth0Provider

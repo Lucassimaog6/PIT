@@ -1,8 +1,8 @@
-import {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function HeaderHome() {
+export default function HeaderHome() {  
     const navigate = useNavigate()
     const { user, logout} = useAuth0()
 

@@ -1,13 +1,13 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import { useClerk } from "@clerk/clerk-react";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import banana from '../../Assets/banana.png';
+import chat from '../../Assets/chat.png';
+import code from '../../Assets/code.png';
+import programas from '../../Assets/programas.png';
+import share from '../../Assets/share.png';
 import LandingHeader from "../../Components/Landing.Header.jsx";
-import HeroImage from '../../Assets/hero_image.svg'
-import programas from '../../Assets/programas.png'
-import banana from '../../Assets/banana.png'
-import chat from '../../Assets/chat.png'
-import code from '../../Assets/code.png'
-import share from '../../Assets/share.png'
-import {useAuth0} from "@auth0/auth0-react";
-import {Link, useNavigate} from "react-router-dom";
-import {useEffect} from "react";
 
 export default function Landing() {
     const navigate = useNavigate()

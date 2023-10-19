@@ -29,8 +29,6 @@ export default function CardProject(params) {
 
     return (
         <section onClick={() => navigate(`/p/${project._id}`)} className='bg-stone-700 p-4 rounded-xl flex flex-col gap-2 h-fit'>
-            <img
-                className="h-48" src={imagempro} alt="Imagem Projeto" />
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
                 <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
@@ -42,9 +40,6 @@ export default function CardProject(params) {
                 <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
                 <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Framework</span>
             </div>
-            <p>
-                {description}
-            </p>
         </section>
     );
 }

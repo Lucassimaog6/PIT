@@ -127,16 +127,18 @@ export default function Project() {
 							ref={description}
 						></textarea>
 					</label>
-
-					<label htmlFor="linkImage">
-						Link da imagem:
-						<input
-							className="w-full p-2 bg-white/20 rounded-md text-white"
-							type="text"
-							id="linkImage"
-							ref={linkImage}
-						/>
-					</label>
+					
+					<div className='hidden'>					
+						<label htmlFor="linkImage">
+							Link da imagem:
+							<input
+								className="w-full p-2 bg-white/20 rounded-md text-white"
+								type="text"
+								id="linkImage"
+								ref={linkImage}
+							/>
+						</label>
+					</div>
 
 					<label htmlFor="tags">
 						Digite suas tags separadas por vírgula:
