@@ -1,4 +1,3 @@
-import imagempro from '../Assets/projeto.jpg'
 import { useNavigate } from 'react-router-dom';
 
 export default function CardProject(params) {
@@ -11,6 +10,7 @@ export default function CardProject(params) {
     let dificultyColor = 'bg-green-400';
     let description = project.description;
     let title = project.title;
+    console.log(project)
 
     switch (ProjectDificulty) {
         case "1":
