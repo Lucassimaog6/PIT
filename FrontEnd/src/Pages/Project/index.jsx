@@ -70,24 +70,24 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("1")}
-								className={`${dificulty === "1" ? "bg-white" : "bg-slate-800"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg `}
+								className={`${dificulty === "1" ? "bg-white" : "bg-white/20"
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg text-black`}
 							>
 								Fácil
 							</button>
 							<button
 								type="button"
 								onClick={() => setDificulty("2")}
-								className={`${dificulty === "2" ? "bg-white text-black" : "bg-white/20"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 `}
+								className={`${dificulty === "2" ? "bg-white " : "bg-white/20"
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 text-black`}
 							>
 								Médio
 							</button>
 							<button
 								type="button"
 								onClick={() => setDificulty("3")}
-								className={`${dificulty === "3" ? "bg-white text-black" : "bg-white/20"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
+								className={`${dificulty === "3" ? "bg-white" : "bg-white/20"
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md text-black`}
 							>
 								Difícil
 							</button>
