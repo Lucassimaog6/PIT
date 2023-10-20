@@ -51,8 +51,8 @@ export default function Project() {
 	return (
 		<>
 			<HeaderHome />
-			<div className="min-h-screen flex items-center justify-center bg-zinc-800">
-				<main className="flex flex-col gap-2 p-16 bg-zinc-70 rounded-lg mt-0 md:mt-16 ">
+			<div className="min-h-screen flex items-center justify-center">
+				<main className="flex flex-col gap-2 p-16 bg-zinc-800 rounded-lg mt-0 md:mt-16 ">
 					<h1 className="text-center text-6xl">Novo Projeto</h1>
 					<label htmlFor="title">
 						Nome do projeto:
@@ -70,7 +70,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("1")}
-								className={`${dificulty === "1" ? "bg-white text-black" : "bg-white/20"
+								className={`${dificulty === "1" ? "bg-white" : "bg-white/20 text-black"
 									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg `}
 							>
 								Fácil

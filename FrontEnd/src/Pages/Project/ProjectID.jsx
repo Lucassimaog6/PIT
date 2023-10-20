@@ -98,14 +98,14 @@ export default function ProjectID() {
                 <HeaderHome />
                 <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-zinc-800 rounded-2xl my-5'>
                     <div className='bg-white/20 p-4 rounded-lg'>
-                        <h1 className='text-5xl'>Título: {project.title}</h1>
-                        <p className='text-2xl'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
-                        <label className='flex gap-2'>Nível:
-                            <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
+                        <h1 className='text-5xl mb-5'>Título: {project.title}</h1>
+                        <p className='text-2xl mb-5'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
+                        <label className='flex gap-2 mb-5'>Nível:
+                            <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center mb-5`}>
                                 <span className='text-sm font-serif'>{dificultyText}</span>
                             </div>
                         </label>
-                        <p className='text-2xl'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
+                        <p className='text-2xl mb-5'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
                         <p>Autor: {owner}</p>
                     </div>
 
