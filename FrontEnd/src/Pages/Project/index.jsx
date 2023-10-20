@@ -100,7 +100,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setStack("back")}
-								className={`${stack === "back" ? "bg-white text-black" : "bg-white/20"
+								className={`${stack === "back" ? "bg-purple-500 text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-r-0 border-gray-200 rounded-l-lg `}
 							>
 								BackEnd
@@ -108,7 +108,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setStack("front")}
-								className={`${stack === "front" ? "bg-white text-black" : "bg-white/20"
+								className={`${stack === "front" ? "bg-purple-500 text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
 							>
 								FrontEnd
