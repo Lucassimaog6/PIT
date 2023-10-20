@@ -13,8 +13,8 @@ export default function HeaderHome() {
     }, [user]);
 
     return (
-        <header className='grid grid-cols-1 md:grid-cols-[auto_auto_1fr] items-center p-4 bg-stone-500 dark:bg-zinc-900'>
-            <button className='m-2 bg-white py-2 px-3 rounded' onClick={() => navigate(-1)}>
+        <header className='grid grid-cols-1 md:grid-cols-[auto_auto_1fr] items-center p-4 bg-stone-500 dark:bg-zinc-700'>
+            <button className='m-2 bg-white py-2 px-3 rounded text-black' onClick={() => navigate(-1)}>
                 Voltar
             </button>
 
@@ -25,25 +25,25 @@ export default function HeaderHome() {
             <div className='justify-self-center md:justify-self-end flex gap-4'>
                 <button
                     onClick={() => navigate('/project/filter')}
-                    className='bg-white w-fit px-4 py-2 rounded'
+                    className='bg-white w-fit px-4 py-2 rounded text-black'
                 >
                     Filtros
                 </button>
                 <button
                     onClick={() => navigate('/project/new')}
-                    className='bg-white w-fit px-4 py-2 rounded'
+                    className='bg-white w-fit px-4 py-2 rounded text-black'
                 >
                     Novo Projeto
                 </button>
                 <button
                     onClick={() => logout()}
-                    className='bg-purple-500 w-fit px-4 py-2 rounded'
+                    className='bg-white w-fit px-4 py-2 rounded text-black'
                 >
                     Logout
                 </button>
                 <button
                     onClick={() => navigate('/profile')}
-                    className='bg-purple-500 w-fit px-4 py-2 rounded'
+                    className='bg-white w-fit px-4 py-2 rounded text-black'
                 >
                     Perfil
                 </button>
