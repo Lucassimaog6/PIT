@@ -51,8 +51,8 @@ export default function Project() {
 	return (
 		<>
 			<HeaderHome />
-			<div className="min-h-screen flex items-center justify-center">
-				<main className="flex flex-col gap-2 p-16 bg-zinc-70 rounded-lg mt-0 md:mt-16">
+			<div className="min-h-screen flex items-center justify-center bg-zinc-800">
+				<main className="flex flex-col gap-2 p-16 bg-zinc-70 rounded-lg mt-0 md:mt-16 ">
 					<h1 className="text-center text-6xl">Novo Projeto</h1>
 					<label htmlFor="title">
 						Nome do projeto:
@@ -70,7 +70,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("1")}
-								className={`${dificulty === "1" ? "bg-purple-500" : "bg-white/20"
+								className={`${dificulty === "1" ? "bg-white text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg `}
 							>
 								Fácil
@@ -78,7 +78,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("2")}
-								className={`${dificulty === "2" ? "bg-purple-500" : "bg-white/20"
+								className={`${dificulty === "2" ? "bg-white text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 `}
 							>
 								Médio
@@ -86,7 +86,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("3")}
-								className={`${dificulty === "3" ? "bg-purple-500" : "bg-white/20"
+								className={`${dificulty === "3" ? "bg-white text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
 							>
 								Difícil
@@ -100,7 +100,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setStack("back")}
-								className={`${stack === "back" ? "bg-purple-500" : "bg-white/20"
+								className={`${stack === "back" ? "bg-white text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-r-0 border-gray-200 rounded-l-lg `}
 							>
 								BackEnd
@@ -108,7 +108,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setStack("front")}
-								className={`${stack === "front" ? "bg-purple-500" : "bg-white/20"
+								className={`${stack === "front" ? "bg-white text-black" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
 							>
 								FrontEnd
@@ -154,7 +154,7 @@ export default function Project() {
 					
 
 					<button
-						className="w-full p-2 bg-purple-500 rounded-md"
+						className="w-full p-2 bg-white rounded-md text-black"
 						onClick={handleNewProject}
 					>
 						Enviar
