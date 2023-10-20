@@ -28,14 +28,14 @@ export default function CardProject(params) {
     }
 
     return (
-        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-stone-700 p-8 rounded-xl flex flex-col gap-2 h-fit'>
+        <section onClick={() => navigate(`/p/${project._id}`)} className='bg-stone-700 p-8 rounded-xl flex flex-col gap-2 h-fit min-h-[43vh]'>
             <h1 className='text-4xl flex flex-wrap items-center gap-2'>
                 {title}
                 <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
                     <span className='text-sm font-serif'>{dificultyText}</span>
                 </div>
             </h1>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 flex-wrap'>
                 <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Tecnologia</span>
                 <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Linguagem</span>
                 <span className='bg-purple-500 rounded-full text-sm py-0.5 px-3'>Framework</span>
