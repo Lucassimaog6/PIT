@@ -70,7 +70,7 @@ export default function Project() {
 							<button
 								type="button"
 								onClick={() => setDificulty("1")}
-								className={`${dificulty === "1" ? "bg-white" : "bg-white/20 text-black"
+								className={`${dificulty === "1" ? "bg-white" : "bg-slate-800"
 									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg `}
 							>
 								Fácil
