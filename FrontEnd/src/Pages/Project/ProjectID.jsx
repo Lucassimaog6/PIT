@@ -126,6 +126,7 @@ export default function ProjectID() {
         project ? (
             <>
                 <HeaderHome />
+<<<<<<< HEAD
                 <main className='m-8 w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-slate-400'>
                     <div className='bg-white/20 p-4 rounded-lg'>
                         <h1 className='text-5xl text-center py-4'>{project.title}</h1>
@@ -135,13 +136,27 @@ export default function ProjectID() {
                         <p className='text-2xl'>{project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
                         <label className='flex gap-2'>
 
+=======
+                <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-zinc-800 rounded-2xl my-5'>
+                    <div className='bg-white/20 p-4 rounded-lg'>
+                        <h1 className='text-5xl mb-5'>Título: {project.title}</h1>
+                        <p className='text-2xl mb-5'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
+                        <label className='flex gap-2 mb-5'>Nível:
+                            <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center mb-5`}>
+                                <span className='text-sm font-serif'>{dificultyText}</span>
+                            </div>
+>>>>>>> 252b240fa15a70c97b75857545c58996f9d3e718
                         </label>
-                        <p className='text-2xl'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
+                        <p className='text-2xl mb-5'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
                         <p>Autor: {owner}</p>
                     </div>
 
+<<<<<<< HEAD
                     {!isWorking ? (
                         <button className="mx-auto mt-4 bg-purple-500 w-fit px-4 py-2 rounded" onClick={() => handleAssign()}>
+=======
+                    <button className="bg-white w-fit px-4 py-2 rounded mt-5 text-black	" onClick={() => handleAssign()}>
+>>>>>>> 252b240fa15a70c97b75857545c58996f9d3e718
                         Iniciar Projeto
                         </button>
                     ) : null}
@@ -152,7 +167,7 @@ export default function ProjectID() {
                         <h1>Digite seu comentário:</h1>
                         <div className="grid grid-cols-[1fr_auto] gap-4">
                             <input type="text" id="comment" className="p-2 bg-white/20 rounded-md text-white" ref={newComment} />
-                            <button onClick={() => handleNewComment()} className="bg-purple-500 w-fit px-4 py-2 rounded">
+                            <button onClick={() => handleNewComment()} className="bg-white w-fit px-4 py-2 rounded text-black">
                                 Enviar
                             </button>
                         </div>

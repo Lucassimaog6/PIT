@@ -20,7 +20,7 @@ export default function LandingHeader() {
                 </Link>
 
                 <button
-                className='bg-stone-700 p-2 px-4 rounded text-zinc-900'
+                className='bg-white p-2 px-4 rounded text-zinc-900'
                 onClick={() => loginWithRedirect()}>
                 Login
             </button>

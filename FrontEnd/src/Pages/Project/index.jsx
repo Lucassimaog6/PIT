@@ -52,7 +52,7 @@ export default function Project() {
 		<>
 			<HeaderHome />
 			<div className="min-h-screen flex items-center justify-center">
-				<main className="flex flex-col gap-2 p-16 bg-zinc-70 rounded-lg mt-0 md:mt-16">
+				<main className="flex flex-col gap-2 p-16 bg-zinc-800 rounded-lg mt-0 md:mt-16 ">
 					<h1 className="text-center text-6xl">Novo Projeto</h1>
 					<label htmlFor="title">
 						Nome do projeto:
@@ -71,15 +71,15 @@ export default function Project() {
 								type="button"
 								onClick={() => setDificulty("1")}
 								className={`${dificulty === "1" ? "bg-purple-500" : "bg-white/20"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg `}
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-l-lg text-black`}
 							>
 								Fácil
 							</button>
 							<button
 								type="button"
 								onClick={() => setDificulty("2")}
-								className={`${dificulty === "2" ? "bg-purple-500" : "bg-white/20"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 `}
+								className={`${dificulty === "2" ? "bg-purple-500 " : "bg-white/20"
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border-t border-b border-gray-200 text-black`}
 							>
 								Médio
 							</button>
@@ -87,7 +87,7 @@ export default function Project() {
 								type="button"
 								onClick={() => setDificulty("3")}
 								className={`${dificulty === "3" ? "bg-purple-500" : "bg-white/20"
-									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
+									}  px-4 py-2 w-1/3 text-sm font-medium text-white border border-gray-200 rounded-r-md text-black`}
 							>
 								Difícil
 							</button>
@@ -99,17 +99,28 @@ export default function Project() {
 						<div className="inline-flex rounded-md shadow-sm">
 							<button
 								type="button"
+<<<<<<< HEAD
 								onClick={() => setStack("front")}
 								className={`${stack === "front" ? "bg-purple-500" : "bg-white/20"
+=======
+								onClick={() => setStack("back")}
+								className={`${stack === "back" ? "bg-purple-500 text-black" : "bg-white/20"
+>>>>>>> 252b240fa15a70c97b75857545c58996f9d3e718
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-r-0 border-gray-200 rounded-l-lg `}
 							>
 								FrontEnd
 							</button>
 							<button
 								type="button"
+<<<<<<< HEAD
 								onClick={() => setStack("back")}
 								className={`${stack === "back" ? "bg-purple-500" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md`}
+=======
+								onClick={() => setStack("front")}
+								className={`${stack === "front" ? "bg-purple-500 text-black" : "bg-white/20"
+									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
+>>>>>>> 252b240fa15a70c97b75857545c58996f9d3e718
 							>
 								BackEnd
 							</button>
@@ -154,7 +165,7 @@ export default function Project() {
 					
 
 					<button
-						className="w-full p-2 bg-purple-500 rounded-md"
+						className="w-full p-2 bg-white rounded-md text-black"
 						onClick={handleNewProject}
 					>
 						Enviar
