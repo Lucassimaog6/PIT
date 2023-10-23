@@ -1,6 +1,7 @@
 import { Auth0Provider } from "@auth0/auth0-react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Sobrenos from "./Pages/Landing/sobrenos";
 
 import './index.css';
 
@@ -53,6 +54,10 @@ function App() {
             <Route 
                 path='/p/:id'
                 element={<ProjectID/>}
+            />
+            <Route
+            path='/sobrenos'
+            element={<Sobrenos/>}
             />
         </Routes>
     );

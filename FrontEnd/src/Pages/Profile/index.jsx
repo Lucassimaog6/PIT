@@ -58,7 +58,7 @@ export default function Profile() {
 			genre,
 		};
 		const response = await fetch(
-			`${import.meta.env.VITE_API_URL}/users/${user}`,
+			`${import.meta.env.VITE_API_URL}/users/${userId}`,
 			{
 				method: "PUT",
 				headers: {

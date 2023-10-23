@@ -45,29 +45,6 @@ export default function Landing() {
     return (
         <main className=' min-h-screen bg-zinc-900 grid grid-rows-[auto_1f]'>
             <LandingHeader />
-
-            <div className='md:hidden mx-auto'>
-                <nav className='flex gap-8'>
-                    <Link to='#'>
-                        <p className='underline'>Home</p>
-                    </Link>
-
-                    <Link to='#'>
-                        <p className='underline'>Serviços</p>
-                    </Link>
-
-                    <Link to='#'>
-                        <p className='underline'>Sobre Nós</p>
-                    </Link>
-
-                    <Link to='#'>
-                        <p className='underline'>Preços</p>
-                    </Link>
-                </nav>
-            </div>
-
-            
-
         <div className="flex flex-col md:flex-row bg-zinc-700 items-center justify-center h-64 gap-24">
             <div className="w-full md:w-1/2">
                 <div className="flex items-center justify-center h-full flex-col font-bold text-2xl">

@@ -155,6 +155,29 @@ async function newWorkingUser(req: Request, res: Response) {
 	}
 }
 
+async function verifyWorkingUser(req: Request, res: Response) {
+	const id = req.params.id;
+	const { userEmail } = req.body;
+	const user = await User.findOne({ email: userEmail });
+	if (!user) {
+		res.status(400).json({ message: 'Usuário não encontrado' });
+	}
+
+	const userId = user?._id.toString();
+
+	try {
+		const project = await Project.findById(id);
+		if (project) {
+			const isWorking = project.workingUsers.includes(userId!);
+			res.status(200).json(isWorking);
+		} else {
+			res.status(400).json({ message: 'Projeto não encontrado' });
+		}
+	} catch (err) {
+		res.status(400).json(err);
+	}
+}
+
 export {
 	createProject,
 	getProject,
@@ -165,4 +188,5 @@ export {
 	getProjectsByDificulty,
 	addComment,
 	newWorkingUser,
+	verifyWorkingUser,
 };

@@ -14,8 +14,8 @@ export default function HeaderHome() {
 
     return (
         <header className='grid grid-cols-1 md:grid-cols-[auto_auto_1fr] items-center p-4 bg-stone-700 dark:bg-stone-500'>
-            <button className='m-2 bg-purple-600 py-2 px-3 rounded' onClick={() => navigate(-1)}>
-                Voltar
+            <button className='m-2 bg-purple-600 py-2 px-3 rounded' onClick={() => navigate('/home')}>
+                Home
             </button>
 
             <p className='text-center p-4 text-2xl'>
@@ -36,7 +36,11 @@ export default function HeaderHome() {
                     Novo Projeto
                 </button>
                 <button
-                    onClick={() => logout()}
+                    onClick={() => logout({
+                        logoutParams: {
+                            returnTo: window.location.origin
+                        }
+                    })}
                     className='bg-purple-500 w-fit px-4 py-2 rounded'
                 >
                     Logout

@@ -7,7 +7,7 @@ export default function Filter() {
 	const navigate = useNavigate();
 
 	const [projects, setProjects] = useState([]);
-	const [dificulty, setDificulty] = useState([false, false, false]);
+	const [dificulty, setDificulty] = useState([true, true, true]);
 	const [stack, setStack] = useState('')
 
 	useEffect(() => {

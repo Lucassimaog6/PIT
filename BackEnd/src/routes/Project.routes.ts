@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createProject, getProject, getProjectsByDate, getProjectsByUpvotes, upvoteProject, downvoteProject, getProjectsByDificulty, addComment, newWorkingUser } from "../controllers/Project.controllers";
+import { createProject, getProject, getProjectsByDate, getProjectsByUpvotes, upvoteProject, downvoteProject, getProjectsByDificulty, addComment, newWorkingUser, verifyWorkingUser } from "../controllers/Project.controllers";
 
 export const projectRouter = Router();
 
@@ -12,3 +12,4 @@ projectRouter.put("/downvote/:id", downvoteProject);
 projectRouter.post("/dificulty/", getProjectsByDificulty);
 projectRouter.post("/comment/:id", addComment);
 projectRouter.put("/working/:id", newWorkingUser);
+projectRouter.post("/working/verify/:id", verifyWorkingUser);

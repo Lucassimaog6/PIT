@@ -10,34 +10,9 @@ export default function ProjectID() {
     const [dificultyColor, setDificultyColor] = useState()
     const [owner, setOwner] = useState()
     const [comments, setComments] = useState([])
+    const [isWorking, setIsWorking] = useState(false)
     const newComment = useRef()
     const { user } = useAuth0()
-
-    useEffect(() => {
-        (async () => {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/${id}`);
-            const data = await response.json()
-            setProject(data)
-
-            switch (data.dificulty) {
-                case "1":
-                    setDificultyColor('bg-green-400');
-                    setDificultyText('I');
-                    break;
-                case "2":
-                    setDificultyColor('bg-orange-600');
-                    setDificultyText('II');
-                    break;
-                case "3":
-                    setDificultyColor('bg-red-400');
-                    setDificultyText('III');
-                    break;
-            }
-            console.log(data)
-            getOwner(data.owner)
-            setComments(data.comments)
-        })()
-    }, [])
 
     async function getOwner(ownerId) {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${ownerId}`);
@@ -70,6 +45,26 @@ export default function ProjectID() {
         newComment.current.value = ''
     }
 
+    async function handleAlreadyAssigned() {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/working/verify/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userEmail: user.email
+            })
+        })
+
+        const data = await response.json()
+        console.log(data)
+
+        if (response.ok) {
+            setIsWorking(data)
+        }
+    }
+    handleAlreadyAssigned() 
+
 
     async function handleAssign() {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/working/${id}`, {
@@ -92,26 +87,66 @@ export default function ProjectID() {
         }
     }
 
+    async function handleDeleteProject() {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+    
+    useEffect(() => {
+        (async () => {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/projects/${id}`);
+            const data = await response.json()
+            setProject(data)
+
+            switch (data.dificulty) {
+                case "1":
+                    setDificultyColor('bg-green-400');
+                    setDificultyText('Fácil');
+                    break;
+                case "2":
+                    setDificultyColor('bg-orange-600');
+                    setDificultyText('Medio');
+                    break;
+                case "3":
+                    setDificultyColor('bg-red-400');
+                    setDificultyText('Difícil');
+                    break;
+            }
+            console.log(data)
+            getOwner(data.owner)
+            setComments(data.comments)
+        })()
+    }, [])
+
     return (
         project ? (
             <>
                 <HeaderHome />
-                <main className='w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-slate-400'>
+                <main className='m-8 w-full md:w-3/5 xl:w-2/5 mx-auto p-4 grid items-center justify-center bg-slate-400'>
                     <div className='bg-white/20 p-4 rounded-lg'>
-                        <h1 className='text-5xl'>Título: {project.title}</h1>
-                        <p className='text-2xl'>Descrição: {project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
-                        <label className='flex gap-2'>Nível:
-                            <div className={`${dificultyColor} rounded-full w-6 h-6 flex items-center justify-center`}>
-                                <span className='text-sm font-serif'>{dificultyText}</span>
-                            </div>
+                        <h1 className='text-5xl text-center py-4'>{project.title}</h1>
+                        <div className={`w-fit ${dificultyColor} rounded-full py-0.5 px-3 mb-4 flex items-center justify-center`}>
+                            <span className='text-sm'>{dificultyText}</span>
+                        </div>
+                        <p className='text-2xl'>{project.description} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quaerat corrupti nobis voluptate quod pariatur perferendis sint. Esse id aperiam natus est at, accusantium excepturi facere voluptas dolorem odit nisi?</p>
+                        <label className='flex gap-2'>
+
                         </label>
                         <p className='text-2xl'>Stack: {project.tags[0] === 'back' ? 'BackEnd' : 'FrontEnd'}</p>
                         <p>Autor: {owner}</p>
                     </div>
 
-                    <button className="bg-purple-500 w-fit px-4 py-2 rounded" onClick={() => handleAssign()}>
+                    {!isWorking ? (
+                        <button className="mx-auto mt-4 bg-purple-500 w-fit px-4 py-2 rounded" onClick={() => handleAssign()}>
                         Iniciar Projeto
-                    </button>
+                        </button>
+                    ) : null}
+
+
                 
                     <div className="gap-4 flex flex-col p-4">                       
                         <h1>Digite seu comentário:</h1>
@@ -136,7 +171,9 @@ export default function ProjectID() {
         ) : (
             <>
                 <HeaderHome />
-                <h1>carregando</h1>
+                    <main className='min-h-screen grid justify-center items-center'>
+                        <h1 className='text-6xl'>carregando</h1>
+                    </main>                
             </>
         )
     )

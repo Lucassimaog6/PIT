@@ -19,7 +19,7 @@ export default function Project() {
 		if (description.current.value === "") return alert("Digite uma descrição!");
 		if (tags.current.value === "") return alert("Digite as tags!");
 
-		const tagsArray = tags.current.value.split(",");
+		const tagsArray = tags.current.value.replace(' ', '').split(",");
 
 		const data = {
 			title: title.current.value,
@@ -99,19 +99,19 @@ export default function Project() {
 						<div className="inline-flex rounded-md shadow-sm">
 							<button
 								type="button"
-								onClick={() => setStack("back")}
-								className={`${stack === "back" ? "bg-purple-500" : "bg-white/20"
+								onClick={() => setStack("front")}
+								className={`${stack === "front" ? "bg-purple-500" : "bg-white/20"
 									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-r-0 border-gray-200 rounded-l-lg `}
 							>
-								BackEnd
+								FrontEnd
 							</button>
 							<button
 								type="button"
-								onClick={() => setStack("front")}
-								className={`${stack === "front" ? "bg-purple-500" : "bg-white/20"
-									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md `}
+								onClick={() => setStack("back")}
+								className={`${stack === "back" ? "bg-purple-500" : "bg-white/20"
+									}  px-4 py-2 w-1/2 text-sm font-medium text-white border border-gray-200 rounded-r-md`}
 							>
-								FrontEnd
+								BackEnd
 							</button>
 						</div>
 					</label>
